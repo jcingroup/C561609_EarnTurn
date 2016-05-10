@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebApplication1</RootNamespace>
-    <AssemblyName>WebApplication1</AssemblyName>
+    <RootNamespace>Work.WebProj</RootNamespace>
+    <AssemblyName>Work.WebProj</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -182,12 +183,110 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\editor.css" />
+    <Content Include="Content\css\grid.css" />
+    <Content Include="Content\css\index.css" />
+    <Content Include="Content\css\page.css" />
+    <Content Include="Content\css\vendor\icomoon.css" />
+    <Content Include="Content\css\vendor\swiper.css" />
+    <Content Include="Content\css\vendor\swiper.min.css" />
+    <Content Include="Content\css\vendor\_temp\animate.css" />
+    <Content Include="Content\css\vendor\_temp\bootstrap-datetimepicker-build.css" />
+    <Content Include="Content\css\vendor\_temp\jquery.loadmask.css" />
+    <Content Include="Content\css\vendor\_temp\mask-load.css" />
+    <Content Include="Content\css\vendor\_temp\themify-icons.css" />
+    <Content Include="Content\css\vendor\_temp\toastr.css" />
+    <Content Include="Content\font\icomoon\icomoon.svg" />
+    <Content Include="Content\images\banner.jpg" />
+    <Content Include="Content\images\bg.gif" />
+    <Content Include="Content\images\Index\banner1.jpg" />
+    <Content Include="Content\images\Index\banner2.jpg" />
+    <Content Include="Content\images\logo.gif" />
+    <Content Include="Content\images\no-pic.gif" />
+    <Content Include="Content\js\common.js" />
+    <Content Include="Content\js\swiper.min.js" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\font\icomoon\icomoon.eot" />
+    <Content Include="Content\font\icomoon\icomoon.ttf" />
+    <Content Include="Content\font\icomoon\icomoon.woff" />
+    <Content Include="Content\sass\base\_basic - 複製.scss" />
+    <Content Include="Content\sass\base\_basic.scss" />
+    <Content Include="Content\sass\base\_form.scss" />
+    <Content Include="Content\sass\base\_grid-old.scss" />
+    <Content Include="Content\sass\base\_grid.scss" />
+    <Content Include="Content\sass\base\_table.scss" />
+    <Content Include="Content\sass\base\_util.scss" />
+    <Content Include="Content\sass\editor.scss" />
+    <Content Include="Content\sass\grid.scss" />
+    <Content Include="Content\sass\helper\mixins\_align.scss" />
+    <Content Include="Content\sass\helper\mixins\_animation.scss" />
+    <Content Include="Content\sass\helper\mixins\_gradient.scss" />
+    <Content Include="Content\sass\helper\mixins\_grid-old.scss" />
+    <Content Include="Content\sass\helper\mixins\_grid.scss" />
+    <Content Include="Content\sass\helper\mixins\_icon.scss" />
+    <Content Include="Content\sass\helper\mixins\_media.scss" />
+    <Content Include="Content\sass\helper\mixins\_mq.scss" />
+    <Content Include="Content\sass\helper\mixins\_placeholders.scss" />
+    <Content Include="Content\sass\helper\mixins\_position.scss" />
+    <Content Include="Content\sass\helper\mixins\_prefix.scss" />
+    <Content Include="Content\sass\helper\mixins\_pseudo.scss" />
+    <Content Include="Content\sass\helper\mixins\_selector.scss" />
+    <Content Include="Content\sass\helper\mixins\_shape.scss" />
+    <Content Include="Content\sass\helper\mixins\_state.scss" />
+    <Content Include="Content\sass\helper\mixins\_tab-focus.scss" />
+    <Content Include="Content\sass\helper\mixins\_text.scss" />
+    <Content Include="Content\sass\helper\_function.scss" />
+    <Content Include="Content\sass\helper\_mixins.scss" />
+    <Content Include="Content\sass\helper\_var.scss" />
+    <Content Include="Content\sass\helper\_variables.scss" />
+    <Content Include="Content\sass\index.scss" />
+    <Content Include="Content\sass\page.scss" />
+    <Content Include="Content\sass\vendor\-font-awesome.scss" />
+    <Content Include="Content\sass\vendor\fa\_animated.scss" />
+    <Content Include="Content\sass\vendor\fa\_bordered-pulled.scss" />
+    <Content Include="Content\sass\vendor\fa\_core.scss" />
+    <Content Include="Content\sass\vendor\fa\_fixed-width.scss" />
+    <Content Include="Content\sass\vendor\fa\_icons.scss" />
+    <Content Include="Content\sass\vendor\fa\_larger.scss" />
+    <Content Include="Content\sass\vendor\fa\_list.scss" />
+    <Content Include="Content\sass\vendor\fa\_mixins.scss" />
+    <Content Include="Content\sass\vendor\fa\_path.scss" />
+    <Content Include="Content\sass\vendor\fa\_rotated-flipped.scss" />
+    <Content Include="Content\sass\vendor\fa\_stacked.scss" />
+    <Content Include="Content\sass\vendor\fa\_variables.scss" />
+    <Content Include="Content\sass\vendor\icomoon.scss" />
+    <Content Include="Content\sass\vendor\icomoon\_style.scss" />
+    <Content Include="Content\sass\vendor\icomoon\_variables.scss" />
+    <Content Include="Content\sass\vendor\magnific-popup\_main.scss" />
+    <Content Include="Content\sass\vendor\magnific-popup\_settings.scss" />
+    <Content Include="Content\sass\vendor\_bootstrap-datetimepicker-build.scss" />
+    <Content Include="Content\sass\vendor\_normalize.scss" />
+    <Content Include="Content\sass\vendor\_print.scss" />
+    <Content Include="Content\sass\_client\module\_animate.scss" />
+    <Content Include="Content\sass\_client\module\_breadcrumb.scss" />
+    <Content Include="Content\sass\_client\module\_btn.scss" />
+    <Content Include="Content\sass\_client\module\_classes.scss" />
+    <Content Include="Content\sass\_client\module\_collapse.scss" />
+    <Content Include="Content\sass\_client\module\_dropdown.scss" />
+    <Content Include="Content\sass\_client\module\_figure.scss" />
+    <Content Include="Content\sass\_client\module\_goTop.scss" />
+    <Content Include="Content\sass\_client\module\_hover.scss" />
+    <Content Include="Content\sass\_client\module\_icon.scss" />
+    <Content Include="Content\sass\_client\module\_label.scss" />
+    <Content Include="Content\sass\_client\module\_list.scss" />
+    <Content Include="Content\sass\_client\module\_modal.scss" />
+    <Content Include="Content\sass\_client\module\_nav.scss" />
+    <Content Include="Content\sass\_client\module\_search.scss" />
+    <Content Include="Content\sass\_client\module\_slider.scss" />
+    <Content Include="Content\sass\_client\module\_tab.scss" />
+    <Content Include="Content\sass\_client\module\_tooltip.scss" />
+    <Content Include="Content\sass\_client\_layout.scss" />
+    <Content Include="Content\sass\_client\_main.scss" />
+    <Content Include="Content\sass\_client\_settings.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -239,9 +338,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
