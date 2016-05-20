@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- saved from url=(0014)about:internet -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>@Resources.Res.System_FrontName::@ViewBag.Title</title>
+    <script src="~/Scripts/cdn/BrowerInfo.js"></script>
+    <script>
+        var gb_approot = '@Url.Content("~")';
+    </script>
+    <link rel="shortcut icon" href="~/favicon.ico"/>
+    <link rel="bookmark" href="~/favicon.ico"/>
+    <link rel="stylesheet" href="~/Content/css/vendor/swiper.min.css">
+    <link rel="stylesheet" href="~/Content/css/vendor/icomoon.css?v=@CommWebSetup.CacheVer">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700'>
+    <link rel="stylesheet" href="~/Content/css/grid.css?v=@CommWebSetup.CacheVer">
+    @if (ViewBag.IsFirstPage)
+    {
+        <link rel="stylesheet" href="~/Content/css/index.css?v=@CommWebSetup.CacheVer">
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/Content/css/page.css?v=@CommWebSetup.CacheVer">
+    }
+    @RenderSection("css", false)
+</head>
+
+<body class="@ViewBag.BodyClass">
+
+    <div id="wrapper">
+
+        <header id="header">
+
+            <h1 class="logo" onclick="location.href='@Url.Content("~/index")'" title="回首頁">@Resources.Res.System_FrontName</h1>
+
+            <nav id="menu">
+                <a href="~/AboutUs">關於英騰</a>
+                <a href="~/Future">企業展望</a>
+                <a href="~/Service">專業服務</a>
+                <a href="~/Results">經營實績</a>
+                <a href="~/Info">企業特色</a>
+                <a href="~/Activity">企業活動</a>
+            </nav>
+
+            <nav class="top-nav">
+                <a href="~/ContactUs">人力招募</a>
+    			<a href="~/Home">回首頁</a>
+            </nav>
+
+        </header><!-- header //-->
+
+        @if (ViewBag.IsFirstPage)
+        {
+            <div id="banner" class="swiper-container">
+                <!-- <ul class="swiper-wrapper">
+                    @* 圖片尺寸:w1920 x h345 *@
+                    <li class="swiper-slide"><img src="~/Content/images/Index/banner1.jpg"></li>
+                    @* <li class="swiper-slide"><img src="~/Content/images/Index/banner2.jpg"></li> *@
+                    @* <li class="swiper-slide"><img src="~/Content/images/Index/banner3.jpg"></li> *@
+                </ul> -->
+                <div class="swiper-pagination"></div>
+            </div><!-- banner //-->
+
+            @RenderBody()
+
+        }
+        else
+        {
+            <div id="banner" class="swiper-container">
+                <ul class="swiper-wrapper">
+                    @* 圖片尺寸:w1920 x h238 *@
+                    <li class="swiper-slide"><img src="~/Content/images/banner.jpg"></li>
+                    @* <li class="swiper-slide"><img src="~/Content/images/banner2.jpg"></li> *@
+                    @* <li class="swiper-slide"><img src="~/Content/images/banner3.jpg"></li> *@
+                </ul>
+                <div class="swiper-pagination"></div>
+            </div><!-- banner //-->
+
+            <main id="main">
+
+                <ul class="breadcrumb wrap">
+                    <li><a href="~/index">HOME</a></li>
+                    @RenderSection("breadCrumb", required: false)
+                    <li>@ViewBag.Target</li> @* 當前頁名稱 *@
+                </ul>
+
+                @RenderBody()
+
+            </main>
+        }
+
+    </div><!-- wrapper //-->
+
+    <a href="#header" class="goTop scroll"></a>
+
+    <footer id="footer">
+        <ul class="wrap foot-contact">
+            <li>英騰物業股份有限公司</li>
+            <li>英騰開發建設有限公司</li>
+            <li>英騰保全股份有限公司</li>
+            <li>英騰公寓大廈管理維護有限公司</li>
+        </ul>
+        <div class="copyright">Earn Turn &copy; 2016</div>
+    </footer><!-- footer -->
+
+    <script src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script src="~/Content/js/common.js"></script>
+    <script src="~/Content/js/swiper.min.js"></script>
+    <script>
+        // 輪播banner
+        var swiper = new Swiper('#banner', {
+            autoplay: 4500,
+            autoplayDisableOnInteraction: false,
+            loop: true,
+            speed: 1000,
+            effect: 'fade',
+            pagination: '.swiper-pagination',
+            paginationClickable: true
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

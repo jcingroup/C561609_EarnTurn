@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+
+$current: current($menu-item);
+
+// 主選單
+#menu {
+    height: $menu-height;
+    z-index: z(menu);
+
+    @if $menu-bg { background: $menu-bg; }
+    float: left;
+    margin-top: 56px;
+    width: calc(100% - 214px);
+
+    > a {
+        display: block; float: left;
+        width: percentage(1/length($menu-item));
+        height: 100%;
+
+        color: $menu-link;
+        font-size: em($menu-font-size);
+        letter-spacing: 1px;
+
+        @include text-center($menu-height);
+
+        &:hover, &:active {
+            background: $warning;
+        }
+        &:hover, &:active,
+        #{$current} {
+            color: #fff;
+        }
+        #{$current} {
+            background: $menu-link-hover url(#{$img-path}/nav-bg.png) 0 0 no-repeat;
+        }
+    }
+}
+.sub-nav {
+    display: none;
+    @extend %list-unstyled;
+
+    @include mq-max(break(#{$menu-mobile-bk},-1)) {
+        display: block;
+        text-align: left;
+
+        @include absolute(left 30% top $menu-height+65 right 0);
+    }
+    @include mq-max(phone-plus) {
+        left: 50%;
+    }
+    a {
+        display: block;
+        font-size: em(17);
+        color: $info;
+        line-height: 2;
+
+        &:hover, &:active { background: none; }
+    }
+    .collapse-title { color: $brand-secondary; }
+    li {
+        float: left;
+        width: percentage(1/3);
+        margin-bottom: $gutter;
+        @include mq-max(phone-plus) { width: 100%; }
+    }
+}
+
+// == 行動版主選單
+@if $menu-mobile-has {
+    .menu-trigger {
+        @extend %text-hide;
+
+        display: none;
+        cursor: pointer;
+        overflow: hidden;
+
+        position: relative;
+        left: $gutter;
+        top: 50%;
+        @include transform(translateY(-50%));
+
+        @include mq-max(break(#{$menu-mobile-bk},-1)) { display: block; }
+        @include mq-max(phone) { left: 0; }
+
+        // 變形 X 效果
+        @if $menu-trigger-animate {
+            z-index: z(overlay) + 1;
+
+            width: $menu-trigger-width;
+            height: $menu-trigger-height;
+
+            @include transition(background 0.3s);
+            @include prefix(apperance, none, webkit moz);
+
+            // 本次專案
+            @include mq-max(mobile) {
+                @include transform(scale(.6));
+                top: 30%;
+                left: -5px;
+            }
+
+            &:active, &.active {
+                // background-color: darken($brand-primary, 10%);
+                span {
+                    background: none;
+                    &::before {
+                        top: 0;
+                        @include transform(rotate(45deg));
+                    }
+                    &::after {
+                        bottom: 0;
+                        @include transform(rotate(-45deg));
+                    }
+                    &::before, &::after {
+                        // background: #fff;
+                        @include prefix(transition-delay, '0, .3s');
+                    }
+                }
+            }
+
+            span {
+                @include absolute(left $menu-trigger-pd right $menu-trigger-pd top (($menu-trigger-height / 2) - ($menu-trigger-thickness / 2)));
+                display: block;
+
+                background: $menu-trigger-color;
+                height: $menu-trigger-thickness;
+                margin: auto;
+                @include transition(background 0s 0.3s);
+
+                @include el(all) {
+                    width: 100%;
+                    height: $menu-trigger-thickness;
+                    background-color: $menu-trigger-color;
+                    @include absolute(left 0);
+                    @include prefix(transition-duration, '.3s, .3s');
+                    @include prefix(transition-delay, '.3s, 0');
+                }
+                &::before {
+                    top: -(($menu-trigger-height / 2) - ($menu-trigger-thickness / 2) - $menu-trigger-pd);
+                    @include prefix(transition-property, 'top, transform');
+                }
+                &::after {
+                    bottom: -(($menu-trigger-height / 2) - ($menu-trigger-thickness / 2) - $menu-trigger-pd);
+                    @include prefix(transition-property, 'bottom, transform');
+                }
+            }
+        } @else {
+            // 專案樣式
+        }
+    }
+}

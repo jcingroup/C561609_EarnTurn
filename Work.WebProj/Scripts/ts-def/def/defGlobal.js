@@ -1,0 +1,14 @@
+var gb_approot;
+var gb_caption;
+var gb_menuname;
+var gb_area;
+var gb_controller;
+var gb_action;
+var gb_def_action;
+var debug_account;
+var debug_password;
+var debug_validate;
+var gb_no;
+var gb_rank;
+var gb_sales_no;
+var gb_roles;

@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // 組件的一般資訊會透過將設定 
@@ -10,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Work.WebProj")]
-[assembly: AssemblyCopyright("Copyright (C)  2016")]
+[assembly: AssemblyCopyright("Copyright (C)  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 下列 GUID 為專案公開 (Expose) 至 COM 時所要使用的 typelib ID
-[assembly: Guid("c86bb247-1a63-4855-bf0b-a453c6663f82")]
+[assembly: Guid("6b167731-a98c-4dad-957c-b3a5c2b0ff21")]
 
 // 組件的版本資訊是由下列四項值構成:
 //

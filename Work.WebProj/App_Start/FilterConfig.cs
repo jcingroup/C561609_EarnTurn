@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace WebApplication2
+namespace DotWeb.AppStart
 {
     public class FilterConfig
     {
