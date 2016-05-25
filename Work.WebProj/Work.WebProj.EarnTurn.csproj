@@ -519,15 +519,15 @@
     <Content Include="Content\sass\helper\mixins\_state.scss" />
     <Content Include="Content\sass\helper\mixins\_text.scss" />
     <Content Include="Content\sass\helper\_var.scss" />
-    <Content Include="Views\Service\Service.cshtml" />
     <Content Include="Views\ContactUs\ContactUs.cshtml" />
     <Content Include="Content\sass\_client\module\_nav.scss" />
     <Content Include="Content\sass\vendor\icomoon.scss" />
     <Content Include="Content\sass\vendor\icomoon\_style.scss" />
     <Content Include="Content\sass\vendor\icomoon\_variables.scss" />
+    <Content Include="Views\Future\Future.cshtml" />
+    <Content Include="Views\Service\Service.cshtml" />
     <Content Include="Views\Service\sidebar.cshtml" />
     <Content Include="Content\sass\helper\_function.scss" />
-    <Content Include="Views\Future\Future.cshtml" />
     <Content Include="Views\Results\Results.cshtml" />
     <Content Include="Views\Info\Info.cshtml" />
     <Content Include="Views\Activity\Activity.cshtml" />
