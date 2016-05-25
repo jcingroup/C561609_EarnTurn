@@ -18,6 +18,13 @@ img.float-l { margin-right: $gutter;}
 
 .hidden { display: none; }
 
+.img-center {
+    @include mixin-dryer(imgCenter) {
+        display: block;
+        margin: auto;
+    }
+}
+
 
 
 // text
@@ -39,11 +46,17 @@ img.float-l { margin-right: $gutter;}
     .text-white { color: #fff;; }
 
     @each $type, $color in $state-type {
-        // .text-#{$type} {
-        //     @include state($color);
-        // }
+        .text-#{$type} {
+            color: $color;
+        }
         .bg-#{$type} {
-            background: lighten($color, 4.5%);
+            @if $index {
+                background: lighten($color, 4.5%);
+            }
+            @if $page {
+                background: rgba($color, .8);
+            }
+            @extend .text-white;
         }
     }
 }

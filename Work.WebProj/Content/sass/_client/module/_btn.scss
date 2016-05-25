@@ -7,6 +7,7 @@ $btn-transition:         'background .35s, color .5s' !default;
 // 下為單選自定樣式，變數有值才會顯示，
 // 當變數設為 false or null 則不顯示
 $btn-font-family:        false !default;
+$btn-font-weight:        false !default;
 $btn-font-size:          18px !default;
 $btn-line-height:        1.01 !default;
 $btn-letter-spacing:     1px !default;
@@ -22,9 +23,10 @@ $btn-border:             false !default;
 $btn-border-radius:      5px !default;
 $btn-shadow:             false !default; // 1px 1px 2px hsla(0,0,0,.2)
 
-$btn-bg-hover:           lighten($brand-primary, 6%) !default;
-$btn-border-hover:       false !default;
-$btn-color-hover:        false !default;
+$btn-hover-bg:           lighten($brand-primary, 6%) !default;
+$btn-hover-border:       false !default;
+$btn-hover-color:        false !default;
+$btn-hover-shadow:       false !default;
 
 
 // button
@@ -45,6 +47,7 @@ $btn-color-hover:        false !default;
     @if $btn-min-width      { min-width: $btn-min-width; }
     @if $btn-font-family    { font-family: $btn-font-family; }
     @if $btn-font-size      { font-size: em($btn-font-size); }
+    @if $btn-font-weight    { font-weight: $btn-font-weight; }
     @if $btn-line-height    { line-height: $btn-line-height; }
     @if $btn-letter-spacing { letter-spacing: $btn-letter-spacing; }
 
@@ -62,9 +65,10 @@ $btn-color-hover:        false !default;
     }
     &:hover, &:active, &.active {
     // &:hover, &:focus, &.focus {
-        @if $btn-bg-hover     { background-color: $btn-bg-hover; }
-        @if $btn-border-hover { border-color: $btn-color-hover; }
-        @if $btn-color-hover  { color: $btn-color-hover; }
+        @if $btn-hover-bg     { background: $btn-hover-bg; }
+        @if $btn-hover-border { border-color: $btn-hover-color; }
+        @if $btn-hover-color  { color: $btn-hover-color; }
+        @if $btn-hover-shadow { box-shadow: $btn-hover-shadow; }
     }
 }
 

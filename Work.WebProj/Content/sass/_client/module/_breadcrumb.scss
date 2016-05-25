@@ -7,28 +7,26 @@
 .breadcrumb {
     @extend %list-inline;
 
-    text-align: left;
-    color: lighten($body-color, 15);
-
+    display: inline-block;
+    background: url(#{$img-path}/breadcrumb_bg.gif) 0 bottom repeat-x;
+    color: #DCCEDD;
     line-height: 1.65;
-    border-bottom: 1px solid #fff;
-    padding-top: $gutter+10;
-    padding-bottom: $gutter;
-    margin: 0;
-    margin-bottom: $gutter*2+5;
+    padding: 5px $gutter 10px;
 
-    li { margin-right: 6px; }
+    li {
+        margin-right: 6px;
+
+        &:last-child { margin-right: 0; }
+    }
+
     a {
-        color: lighten($body-color, 40);
+        color: lighten($body-color,45);
         font-size: em(13px);
 
         @include el(after, false, '/') {
             margin-left: 3px;
-            color: darken($brand-gray, 7%);
+            // color: darken($brand-gray, 7%);
         }
-
-        &:hover, &:active {
-            color: $brand-secondary;
-        }
+        &:hover, &:active { color: $link-color; }
     }
 }

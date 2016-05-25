@@ -1,22 +1,145 @@
 ﻿@{
-    ViewBag.Title = "公司簡介";
+    ViewBag.Title = "關於英騰::結合保全特勤,緊急求救系統,24小時監控系統";
     ViewBag.BodyClass = "AboutUs";
-    ViewBag.Target = "公司簡介";
+    ViewBag.Target = "關於英騰";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2 class="text-left title">@ViewBag.Title</h2>
+@section Scripts {
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script>
+        // google 地圖
+        var site = new google.maps.LatLng(25.0571798, 121.5135682);
 
-<article id="p1">
-    <h3>服務項目</h3>
+        function init() {
 
-    <p>銓基電子股份有限公司創立於1999年10月，致力於精密電子開關的開發與製造，如 : <strong>輕觸開關、滑動開關、指撥開關、偵測開關、按鍵開關、電源插座、耳機插座</strong>…等。</p>
+            var mapOptions = {
+                // 地圖放大比例-數字愈大愈詳細
+                zoom: 14,
 
-    <p>我們的產品廣泛應用於電腦週邊、工業電子、視聽器材，如 : <strong>居家安全系統、個人電腦、穿戴式電子裝置、數位像機、智慧型手機及所有3C產品</strong>。目前，為滿足市場及客戶的需求。</p>
-</article>
+                // 不要卷軸功能,ui也不要
+                // scrollwheel: false,
 
-<article id="p2">
-    <h3>我們的優勢</h3>
-    <h5>銓基一直秉持著永續發展的理念</h5>
-    <p>我們維持的經營理念是”優秀的產品、不斷創新、誠信與誠實”，以滿足廣大國內外客戶的需求。</p>
-</article>
+                // 地圖中心的緯、經度，必設
+                center: site,
+
+                // 顏色樣式
+                styles: [{"stylers":[{"saturation":-100},{"gamma":1}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.business","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"poi.place_of_worship","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"geometry","stylers":[{"visibility":"simplified"}]},{"featureType":"water","stylers":[{"visibility":"on"},{"saturation":50},{"gamma":0},{"hue":"#50a5d1"}]},{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"color":"#333333"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"weight":0.5},{"color":"#333333"}]},{"featureType":"transit.station","elementType":"labels.icon","stylers":[{"gamma":1},{"saturation":50}]}]
+            };
+
+            // html tag
+            var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: site,
+                map: map
+                // title: 'Taiwan(R.O.C.) Alder Optomechanical Corp.'
+            });
+            marker.setMap(map);
+        }
+
+        // 當網站loading完成後再建立此地圖
+        google.maps.event.addDomListener(window, 'load', init);
+    </script>
+}
+
+<section id="p1" class="wrap">
+    <article class="col-6 text-left">
+        <h3 class="title">企業介紹</h3>
+        <table class="full">
+            <tr>
+                <th>經營理念</th>
+                <td class="text-left">英騰許您一個安全的家</td>
+
+                <th>服務態度</th>
+                <td class="text-left">好還要更好</td>
+            </tr>
+            <tr>
+                <th>品質政策</th>
+                <td class="text-left">服務優先 專業值勤 安全第一</td>
+
+                <th>全方位</th>
+                <td class="text-left">結合保全特勤 緊急求救系統 24小時監控系統</td>
+            </tr>
+            <tr>
+                <th>社區營造</th>
+                <td class="text-left" colspan="3"> 發揚在地人文精神 舉辦社區活動 結合當地風俗民情</td>
+            </tr>
+        </table>
+        <p>英騰開發建設有限公司於2000年02月22月奉內政部【台(89)內警字第８９８１０８９號】核准成立國內第一家擁有自行研發、生產及採用衛星傳訊的無線系統保全公司，並於2010年獲內政部核准更名為英騰保全股份有限公司。</p>
+        <p>秉持著【英騰許您一個安全的家】之經營理念，不斷研發更專業的保全設備，設立24小時監控中心，能為社區時時刻刻監督，警戒回報，徹底改善警衛執勤之疏失，並訓練24小時機動執勤人員，隨時督勤及緊急事件發生時之第一時間危機處理。</p>
+        <p>本公司上下一貫保有【好還要更好】的服務態度，堅持『服務優先、專業執勤、安全第一』的品質政策。</p>
+        <p>英騰保全不僅結合保全特勤人員、緊急求救系統及24小時監控系統，提供社區全方位安全維護，我們亦以專業的社區總體營造為指標，規劃節能減碳計畫為社區省荷包，協助舉辦社區活動敦親睦鄰，並發揚在地人文精神，結合當地風俗民情，突顯社區優質文化，讓社區充滿活力與溫馨。英騰的堅持與責任將社區優質精神發揚光大，並為你我的生活留下美麗的足跡。</p>
+    </article>
+
+    <article class="col-6">
+        <h3 class="title">組織架構</h3>
+        <img class="img-center" src="~/Content/images/AboutUs/organization.gif" alt="組織架構圖">
+    </article>
+</section>
+
+<section id="p2" class="bg-warning">
+    <h3 class="title text-white">英騰集團大事記</h3>
+
+    <div class="wrap">
+        <ul class="col-4 text-left list-time">
+            <li><em class="circle">2009</em> 台北市政府核准設立英騰開發建設有限公司。</li>
+            <li><em class="circle">2010</em> 內政部認證並核發英騰保全股份有限公司營業許可。</li>
+            <li><em class="circle">2010</em> 內政部認證並核發英騰公寓大廈管理維護有限公司。</li>
+            <li class="icon-crown"><em class="circle">2010</em>認證英騰保全股份有限公司榮獲ISO 9001。</li>
+            <li class="icon-crown"><em class="circle">2010</em>英騰公寓大廈管理維護有限公司榮獲ISO 9001認證。</li>
+            <li class="icon-crown"><em class="circle">2010</em>獲頒新北市保全商業同業公會之績優會員證書。</li>
+        </ul>
+        <ul class="col-4 text-left list-time">
+            <li><em class="circle">2011</em> 台北市政府核發英騰保全股份有限公司營業登記證。</li>
+            <li class="icon-crown"><em class="circle">2011</em>獲頒基隆市警察局第二分局感謝狀。</li>
+            <li class="icon-crown"><em class="circle">2012</em>服務社區獲頒新北市政府社區融合社區績優獎。</li>
+            <li><em class="circle">2013</em> 通過物業管理高階經理人實務班訓練，獲頒結業證書。</li>
+            <li><em class="circle">2014</em> 英騰服務社區獲頒新北市低碳社區標章證書銀鵝等級。</li>
+            <li><em class="circle">2014</em> 新北市汐止區金龍皇璽動土典禮。<label class="label">賀</label></li>
+        </ul>
+        <ul class="col-4 text-left list-time">
+            <li><em class="circle">2015</em> 榮譽加入台北市保全商業同業公會，與同業相互交流。</li>
+            <li><em class="circle">2015</em> 台北市政府核發英騰物業股份有限公司營業登記證。</li>
+            <li><em class="circle">2015</em> 榮譽加入台北市公寓大廈管理維護商業同業公會。</li>
+            <li><em class="circle">2015</em> 新北市汐止區金龍皇璽開工大吉。</li>
+            <li><em class="circle">2016</em> 榮譽加入桃園市保全商業同業公會，與同業相互交流。</li>
+            <li><em class="circle">2016</em> 榮譽加入桃園市公寓大廈管理維護商業同業公會。</li>
+        </ul>
+        <ul class="list-pic clear">
+            <li><img src="~/Content/images/AboutUs/certificate.jpg" alt="ISO中文"><span>ISO中文</span></li>
+            <li><img src="~/Content/images/AboutUs/certificate2.jpg" alt="ISO通過"><span>ISO通過</span></li>
+            <li><img src="~/Content/images/AboutUs/certificate3.jpg" alt="內政部核發登記"><span>內政部核發登記</span></li>
+            <li><img src="~/Content/images/AboutUs/certificate4.jpg" alt="公寓大廈ISO通過證書"><span>公寓大廈ISO通過證書</span></li>
+            <li><img src="~/Content/images/AboutUs/certificate5.jpg" alt="公寓大廈管理維護登記證"><span>公寓大廈管理維護登記證</span></li>
+            <li><img src="~/Content/images/AboutUs/certificate6.jpg" alt="台北市政府核發登記"><span>台北市政府核發登記</span></li>
+            <li><img src="~/Content/images/AboutUs/certificate7.jpg" alt="保全ISO通過"><span>保全ISO通過</span></li>
+        </ul>
+    </div>
+</section>
+
+<section id="p3" class="wrap">
+    <article class="col-6">
+        <h3 class="title">集團簡介</h3>
+        <img class="img-center" src="~/Content/images/AboutUs/organization2.gif" alt="集團簡介">
+    </article>
+
+    <article class="col-6">
+        <h3 class="title">人事配置圖</h3>
+        <img class="img-center" src="~/Content/images/AboutUs/organizition3.gif" alt="人事配置圖">
+    </article>
+</section>
+
+<section id="p4">
+    <div id="map-canvas"></div>
+
+    <div class="col-4 contacts text-left">
+        <h3 class="text-white">聯絡我們</h3>
+        <ul class="list-unstyled">
+            <li>英騰集團</li>
+            <li><span class="label">地址</span>台北市大同區民生西路231號9樓</li>
+            <li><span class="label">電話</span>02-2557-8155</li>
+            <li><span class="label">傳真</span>02-2557-3010</li>
+        </ul>
+    </div>
+</section>

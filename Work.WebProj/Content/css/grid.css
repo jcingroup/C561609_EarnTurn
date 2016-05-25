@@ -4,8 +4,8 @@
   .row::after {
     content: ''; }
 
-.row + .row {
-  margin-top: 15px; }
+.row {
+  margin-bottom: 15px; }
 
 .col-1-3 {
   width: 33.33333%; }

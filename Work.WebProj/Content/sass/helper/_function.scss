@@ -19,12 +19,13 @@
 }
 
 // 當前頁選單
-@function current($map: $menu-item) {
+@function page($current-item, $map: $menu-item) {
     $current: ();
 
     @each $item in $map {
         $i: index($map, $item);
-        $current: $current, unquote(".#{$item} &:nth-of-type(#{$i})");
+        // $current: $current, unquote(".#{$item} &:nth-of-type(#{$i})");
+        $current: $current, unquote(".#{$item} #{$current-item}(#{$i})");
     }
     @return $current;
 }

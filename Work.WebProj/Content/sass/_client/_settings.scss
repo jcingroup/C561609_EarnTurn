@@ -2,6 +2,8 @@
 
 $img-path:              '../images' !default;
 $font-path:             '../font' !default;
+$index:                 false !default;           // 首頁用
+$page:                  false !default;           // 內頁用
 
 // 抽象色
 $brand-primary:         #5B2F5D !default;             // 主色
@@ -10,31 +12,36 @@ $brand-gray:            #E0E2DE !default;             // 輔色
 $success:               #368B39 !default;             // 綠
 $info:                  #2F3190 !default;             // 藍
 $warning:               #A07910 !default;             // 黃
-$error:                 #F35048 !default;             // 紅
+$error:                 #B84C54 !default;             // 紅
+
+$font-family-sp:        'Champagne & Limousines','Open Sans',Verdana,Arial,Helvetica,sans-serif;
+
+$headings-font-family:  false !default;
+$headings-color:        darken($info,20) !default; // #1F213B
 
 
 // == layout
 // ----------------------------------------------------------------------
 $min-width:             1008px;     // 網頁最小尺寸
-$max-width:             1400px;     // 網頁最寬尺寸: .wrap
+$max-width:             1200px;     // 網頁最寬尺寸: .wrap
 $menu-item:             'AboutUs' 'Future' 'Service' 'Results' 'Info' 'Activity';
 
-$wrapper-bg:            url(#{$img-path}/bg.gif) repeat-y 0 0 !default;
-$content-spacing:       45px !default;
+$wrapper-bg:            #E2E2D6 url(#{$img-path}/bg2.gif) center 0 repeat-y !default;
+$content-spacing:       0 !default;
 
 // header
 $header-height:         120px !default;
-$header-bg:             $brand-primary url(#{$img-path}/header_bg.gif) repeat-x 0 56px !default;
+$header-bg:             url(#{$img-path}/header_bg.gif) no-repeat center 56px !default;
 
 // logo
 $logo-img:              'logo.png' !default;
-$logo-size:             214px 204px !default;
+$logo-size:             216px 204px !default;
 $logo-pos:              left 50% top 0 !default;
 
 // footer
-$footer-height:         205px !default;
-$footer-bg:             #E0E2DE !default; //#85afd9
-$footer-color:          #AD9F82 !default; //#63889D;
+$footer-height:         222px !default;
+$footer-bg:             #E2E2D6 !default; //#85afd9
+$footer-color:          #AB9F82 !default; //#63889D;
 
 // z-index
 $z-index: (
@@ -78,9 +85,24 @@ $menu-trigger-pd:              0;
 $menu-trigger-color:           $brand-primary;
 
 // ## module/slider
-$swiper-pagination:            true;
+// $swiper-pagination:            true;
 // $swiper-banner:                false;
 
+// ## module/btn
+$btn-font-family:              $font-family-sp;
+$btn-font-size:                23px;
+$btn-font-weight:              500;
+$btn-color:                    #000;
+$btn-border-radius:            8px;
+$btn-shadow:                   -5px 4px 0 rgba(#000,.3);
+$btn-hover-shadow:             none;
+
+
+// ## base/table
+$tb-border:                    1px solid #E3D5C1;
+$tb-pd:                        5px 10px;
+$th-color:                     darken($info, 15);
+$td-color:                     darken($warning, 5);
 
 // ## module/animate - search,lan-nav
 $fadeIn:                       true;

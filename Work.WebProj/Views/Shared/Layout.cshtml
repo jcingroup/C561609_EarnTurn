@@ -5,8 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>@Resources.Res.System_FrontName::@ViewBag.Title</title>
+    <title>@ViewBag.Title:@Resources.Res.System_FrontName::</title>
     <script src="~/Scripts/cdn/BrowerInfo.js"></script>
     <script>
         var gb_approot = '@Url.Content("~")';
@@ -47,7 +46,7 @@
 
             <nav class="top-nav">
                 <a href="~/ContactUs">人力招募</a>
-    			<a href="~/Home">回首頁</a>
+    			<a href="~/index">回首頁</a>
             </nav>
 
         </header><!-- header //-->
@@ -55,13 +54,13 @@
         @if (ViewBag.IsFirstPage)
         {
             <div id="banner" class="swiper-container">
-                <!-- <ul class="swiper-wrapper">
-                    @* 圖片尺寸:w1920 x h345 *@
+                <ul class="swiper-wrapper">
+                    @* 圖片尺寸:w1200 x h556 *@
                     <li class="swiper-slide"><img src="~/Content/images/Index/banner1.jpg"></li>
                     @* <li class="swiper-slide"><img src="~/Content/images/Index/banner2.jpg"></li> *@
                     @* <li class="swiper-slide"><img src="~/Content/images/Index/banner3.jpg"></li> *@
-                </ul> -->
-                <div class="swiper-pagination"></div>
+                </ul>
+                @* <div class="swiper-pagination"></div> *@
             </div><!-- banner //-->
 
             @RenderBody()
@@ -70,25 +69,26 @@
         else
         {
             <div id="banner" class="swiper-container">
-                <ul class="swiper-wrapper">
+                <!-- <ul class="swiper-wrapper">
                     @* 圖片尺寸:w1920 x h238 *@
                     <li class="swiper-slide"><img src="~/Content/images/banner.jpg"></li>
                     @* <li class="swiper-slide"><img src="~/Content/images/banner2.jpg"></li> *@
                     @* <li class="swiper-slide"><img src="~/Content/images/banner3.jpg"></li> *@
-                </ul>
-                <div class="swiper-pagination"></div>
+                </ul> -->
+                @* <div class="swiper-pagination"></div> *@
+                <h2>@ViewBag.Target</h2>
             </div><!-- banner //-->
 
-            <main id="main">
-
-                <ul class="breadcrumb wrap">
+            <div class="wrap text-left">
+                <ul class="breadcrumb">
                     <li><a href="~/index">HOME</a></li>
                     @RenderSection("breadCrumb", required: false)
                     <li>@ViewBag.Target</li> @* 當前頁名稱 *@
                 </ul>
+            </div>
 
+            <main id="main">
                 @RenderBody()
-
             </main>
         }
 
@@ -97,7 +97,7 @@
     <a href="#header" class="goTop scroll"></a>
 
     <footer id="footer">
-        <ul class="wrap foot-contact">
+        <ul class="foot-contact">
             <li>英騰物業股份有限公司</li>
             <li>英騰開發建設有限公司</li>
             <li>英騰保全股份有限公司</li>

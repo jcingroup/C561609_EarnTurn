@@ -1,95 +1,85 @@
 ﻿@charset "UTF-8";
 
 $list-dot-color: $brand-primary;
-$list-circle-bg: $brand-primary;
+// $list-circle-bg: $brand-primary;
 
 // list
 // ------------------------------------------------------------
 .list-unstyled { @extend %list-unstyled; }
 .list-inline { @extend %list-inline; }
 
-// 小圓點
-.list-dot {
-    @extend %list-unstyled;
+@if $page {
+    .list-dot, .list-time {
+        @extend %list-unstyled;
+    }
+    .list-dot, .list-time, .list-pic {
+        margin-bottom: $spacer;
+    }
 
-    li {
-        @include icon-dot(left, 5px, $list-dot-color, left 0 top 45%);
-        line-height: 1.75;
-        margin-bottom: $gutter/2;
+    // 小圓點
+    .list-dot {
+
+        li {
+            @include icon-dot(left, 5px, $list-dot-color, left 0 top 45%);
+            line-height: 1.75;
+            margin-bottom: $gutter/2;
+        }
+    }
+
+    // 大事記
+    .list-time {
+        $list-circle-bg: darken($warning,5);
+
+        position: relative;
+        z-index: 1;
+
+        @include el(before) {
+            background: rgba(#fff,.35);
+            width: 1px;
+            height: 90%;
+            z-index: -1;
+            @include absolute(left 30px top 22px);
+        }
+
+        &:nth-child(n+2) {
+            &::before { left: 37px; }
+        }
+
+        li {
+            clear: both;
+            padding: 15px 0;
+        }
+        em {
+            @include circle(60px, center, $list-circle-bg);
+            display: block;
+            float: left;
+            vertical-align: middle;
+            color: rgba(#fff,.65);
+            font-style: normal;
+            margin-right: 15px;
+            margin-top: -5px;
+        }
+        .icon-crown em {
+            background-position: center 5px;
+            background-repeat: no-repeat;
+            background-image: url(#{$img-path}/icon-crown.png?v2);
+            line-height: 1.1;
+            padding-top: 30px;
+        }
+    }
+
+    .list-pic {
+        @extend %list-inline;
+
+        li { margin: 1%}
+        img {
+            border: $tb-border;
+            padding: 5px;
+        }
+        span {
+            display: block;
+            text-align: center;
+            font-size: em(13);
+        }
     }
 }
-
-// .list-dot {
-//     li::before {
-//         $font-size: 15px;
-//         top: $font-size / 2;
-//     }
-// }
-
-// em 圓角
-// .list-circle {
-//     $bg-color: lighten($brand-gray, 2%);
-
-//     @extend %list-unstyled;
-//     @extend .text-left;
-
-//     position: relative;
-
-//     @include el(before) {
-//         background: $list-circle-bg;
-//         width: 3px;
-//         height: 90%;
-//         z-index: -1;
-//         @include absolute(left 30px top 22px);
-//     }
-
-//     &.col-6:nth-child(2) {
-//         &::before { left: 43px; }
-//     }
-
-//     li {
-//         clear: both;
-//         padding-top: 30px;
-//     }
-//     em {
-//         @include circle(60px, center, $list-circle-bg);
-//         display: block;
-//         float: left;
-//         border: 1px solid $brand-gray;
-//         color: $brand-primary;
-//         font-style: normal;
-//         margin-top: -20px;
-//     }
-//     p {
-//         margin-left: 70px;
-//         vertical-align: middle;
-//     }
-//     span {
-//         margin-right: 8px;
-//         color: darken($brand-gray, 20%);
-//     }
-// }
-
-// 自動編號
-// $num-max: 15;
-
-// .list-number li {
-//     $size: 21px;
-
-//     padding-left: $size +10;
-
-//     &::before {
-//         @include text-center($size);
-//         @include size($size);
-//         top: 0;
-//         font-size: em(13px);
-//         color: #fff;
-//     }
-//     @for $i from 1 through $num-max {
-//         &:nth-child(#{$i}) {
-//             &::before {
-//                 content: '#{$i}';
-//             }
-//         }
-//     }
-// }

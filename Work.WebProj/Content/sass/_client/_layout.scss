@@ -6,19 +6,24 @@
 // 置中(有最大寬度限制,非滿版才需要)
 %center {
     max-width: $max-width;
-    margin: 0 $gutter+35;
+    margin: 0 $gutter*4;
 
     @include mq(wider) { margin: 0 auto; }
-    @include mq-max(tablet) { margin: 0; }
+
+    @if $enable-RWD {
+        @include mq-max(tablet) { margin: 0; }
+    }
 }
 
 // RWD容器
 %contain {
     @extend %clearfix;
 
-    @include mq-max(tablet) {
-        padding-left: $gutter;
-        padding-right: $gutter;
+    @if $enable-RWD {
+        @include mq-max(tablet) {
+            padding-left: $gutter;
+            padding-right: $gutter;
+        }
     }
 }
 
@@ -38,7 +43,6 @@ html, body {
 #header, #footer, #main/*, .wrap*/ {
     position: relative;
 }
-
 #wrapper {
     @if $lte7 { _height: 100%; }
     min-height: 100%;
@@ -46,6 +50,13 @@ html, body {
 
     @if $wrapper-bg {
         background: $wrapper-bg;
+    }
+
+    // 本次專案
+    @include el(before) {
+        @include absolute(left 0 right 0 top 0);
+        background: $brand-primary url(#{$img-path}/bg.gif) repeat-x 0 56px;
+        height: 120px;
     }
 }
 
@@ -83,16 +94,35 @@ html, body {
     z-index: z(footer);
 
     // 本次專案樣式
+    padding-top: $gutter*2;
+
+    @if $page {
+        @include el(before) {
+            @include absolute(left 0 right 0 top 0);
+            height: 5px;
+            background: #EFCB7F url(#{$img-path}/footer_bg.gif) center 0 repeat-y;
+        }
+    }
 }
 .copyright {
-    font-size: em(14px);
-    color: $info;
-    margin-top: 30px;
+    background: $footer-color url(#{$img-path}/icon-footer.gif) no-repeat center 12px;
+    color: #E0E2DE;
+    font-size: em(13);
+    padding: 12px 0 13px;
 }
 
 .foot-contact {
-    padding-left: $gutter*2;
-    color: #414854;
-    font-size: em(14px);
+    margin-bottom: $gutter*3;
+
+    li {
+        @include text-pic('footer-contacts.gif',206px,103px,fixed,0 center);
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 1.5%;
+
+        &:nth-child(2) { width: 214px; background-position: -239px 0; }
+        &:nth-child(3) { width: 240px; background-position: -489px 0; }
+        &:last-child { width: 220px; background-position: right 0; margin-right: 0; }
+    }
 }
 

@@ -9,15 +9,21 @@ $prefixes: webkit !default;
 // @include prefix(transform, translateX(-50%), moz ms);
 
 // $pre不給值時，用預設變數，有給值的話就取代原變數
-@mixin prefix($property, $value, $pre: $prefixes, $els: false) {
+@mixin prefix($property, $value, $pre: $prefixes, $type: normal) {
+    // $value: unquite(#{$value});
+
     @each $prefix in $pre {
-        @if $els == false {
-            -#{$prefix}-#{$property}: unquote(#{$value});
-        } @else {
+        @if $type == normal {
+            -#{$prefix}-#{$property}: #{$value};
+        }
+        @else if $type == all {
+            -#{$prefix}-#{$property}: -#{$prefix}-#{$value};
+        }
+        @else {
             #{$property}: -#{$prefix}-#{$value};
         }
     }
-    #{$property}: unquote(#{$value});
+    #{$property}: #{$value};
 }
 
 // 追加 prefix 值
@@ -27,11 +33,11 @@ $prefixes: webkit !default;
 }
 
 @mixin transition($args...) {
-    @include prefix(transition, unquote(#{$args}));
+    @include prefix(transition, #{$args});
 }
 
 @mixin transform($args...) {
-    @include prefix(transform, unquote(#{$args}), ms webkit);
+    @include prefix(transform, #{$args}, ms webkit);
 }
 
 @mixin opacity($opacity) {
@@ -39,29 +45,3 @@ $prefixes: webkit !default;
     $opacity-ie: $opacity * 100;
     filter: alpha(opacity=$opacity-ie); //IE8
 }
-
-// @mixin vendorize($property, $value, $keyframe: false){
-//     @if $keyframe != false{
-//         #{$prefix+$property}: $value;
-//     } @else {
-//         @each $pfx in $prefixes {
-//             $prefix: if($pfx == "", "", #{"-"+$pfx+"-"});
-//             #{$prefix+$property}: $value;
-//         }
-//     }
-// }
-
-// old
-// @mixin prefix($property, $value...) {
-//     -webkit-#{$property}: unquote('#{$value}');
-//     -moz-#{$property}: unquote('#{$value}');
-//     -o-#{$property}: unquote('#{$value}');
-//     -ms-#{$property}: unquote('#{$value}');
-//     #{$property}: unquote('#{$value}');
-// }
-
-// @mixin prefix($property, $value) {
-//     @each $prefix in $prefixes {
-//         #{$prefix}#{$property}: #{$value};
-//     }
-// }

@@ -3,12 +3,18 @@
 // var 變數，需放在 @import "helper/var" 之上才能覆蓋掉
 // ------------------------------------------------------------
 $index:              true;
+$states:             true;
 
 $img-path2:          '../images/index';
 $content-spacing:    0;
-$banner-height:      345px;
 
-$font-size-h2:       41px;
+$headings-color:     false;
+$font-size-h3:       33px;
+
+$btn-bg:             url(#{$img-path2}/btn.gif) no-repeat center center;
+$btn-min-width:      148px;
+$btn-padding:        16px 0;
+$btn-hover-bg:       url(#{$img-path2}/btn2.gif) no-repeat center center;
 
 
 
@@ -28,8 +34,117 @@ $font-size-h2:       41px;
 
 
 // == main
-#banner {
-    @include radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
-    // background: radial-gradient(#2D5D7C 15%, #2A1F3C 70%);
-    height: 616px;
+section {
+    padding: $gutter*2 0;
+}
+
+.about {
+    border-bottom: 5px solid #C8AC93;
+    position: relative;
+
+    header {
+        color: darken($info, 20);
+        font-size: em(32);
+        background: url(#{$img-path2}/title_bg.gif) center 0 no-repeat;
+        padding-top: 22px;
+        width: 148px; height: 113px;
+        @include pos-center;
+    }
+
+    ul {
+        background: url(#{$img-path2}/about.png) center 0 no-repeat;
+        height: 262px;
+    }
+
+    // $line-height: 125px;
+    li {
+        display: none;
+        // font-size: em(17);
+        // color: $info;
+        // vertical-align: middle;
+        // height: $line-height;
+        // z-index: 1;
+
+        // // @include absolute(left 50%);
+        // position: relative;
+
+        // @include el(before, inline-block) {
+        //     vertical-align: middle;
+        //     height: 100%;
+        // }
+        // @include el(after) {
+        //     @include pos-center(y);
+        //     height: 40px;
+        //     z-index: -1;
+        // }
+        // &:nth-child(even) {
+        //     &::after {
+        //         @include linear-gradient(to right,#C19319 20%, rgba(#F7EA8D,0) 100%);
+        //         left: 50px; right: 0;
+        //     }
+        //     em { margin-right: 10px; }
+        // }
+        // &:nth-child(odd) {
+        //     &::after {
+        //         @include linear-gradient(to left,#C19319 20%, rgba(#F7EA8D,0) 100%);
+        //         right: 50px; left: 0;
+        //     }
+        //     em {
+        //         float: right;
+        //         margin-left: 10px;
+        //     }
+        // }
+        // &:first-child {
+        //     left: 17%;
+        // }
+        // &:nth-child(2) {}
+        // &:nth-child(3) {
+        //     top: 500px;
+        //     left: -30%;
+        // }
+    }
+    // em {
+    //     @include circle($line-height,center);
+    //     display: inline-block;
+    //     vertical-align: middle;
+    //     font-size: em(24,17);
+    //     font-style: normal;
+    //     color: #000;
+    //     background: url(#{$img-path2}/circle_bg.png) 0 0 no-repeat;
+    // }
+}
+.intro {
+    background: $brand-primary url(#{$img-path2}/intro.gif) center 0 no-repeat;
+    color: #fff;
+
+    .wrap {
+        background: url(#{$img-path2}/pic.png) right 0 no-repeat;
+        padding-right: 370px;
+        max-width: 980px;
+        margin: auto;
+        padding-top: 45px;
+        min-height: 397px;
+    }
+    header {
+        font-size: em(59);
+        letter-spacing: 7px;
+        text-shadow: 0 0 2px #5B2D4D;
+    }
+    h3 {
+        letter-spacing: 1px;
+        margin-bottom: 30px;
+    }
+    p {
+        font-size: em(19);
+        line-height: 2.2;
+    }
+    .sign {
+        float: right;
+        background-image: url(#{$img-path2}/sign.gif);
+        margin-top: 20px;
+    }
+    .btn {
+        margin-top: 40px;
+        text-align: center;
+    }
 }

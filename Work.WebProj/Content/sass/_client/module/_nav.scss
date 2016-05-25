@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 
-$current: current($menu-item);
+$current: page('&:nth-child');
 
 // 主選單
 #menu {
@@ -11,60 +11,42 @@ $current: current($menu-item);
     @if $menu-bg { background: $menu-bg; }
     float: left;
     margin-top: 56px;
-    width: calc(100% - 214px);
+    width: 100%;
 
-    > a {
-        display: block; float: left;
-        width: percentage(1/length($menu-item));
+    a {
+        display: inline-block;
+        margin-right: -4px;
         height: 100%;
+        // width: percentage(1/length($menu-item));
+        // width: 9.9%;
+        width: 138px;
 
         color: $menu-link;
         font-size: em($menu-font-size);
         letter-spacing: 1px;
 
-        @include text-center($menu-height);
+        @include text-middle($menu-height);
+        @include mq(wider) {
+            width: ($max-width - nth($logo-size,1))/length($menu-item);
+        }
 
+        &:nth-child(4) {
+            margin-left: nth($logo-size,1) - 8;
+        }
         &:hover, &:active {
             background: $warning;
-        }
-        &:hover, &:active,
-        #{$current} {
             color: #fff;
+            box-shadow: inset 3px 3px 15px rgba(#000,.3);
         }
         #{$current} {
-            background: $menu-link-hover url(#{$img-path}/nav-bg.png) 0 0 no-repeat;
+            color: darken($menu-link,15);
+            box-shadow: inset 2px 2px 10px rgba(#000,.5);
+
+            &:hover, &:active { background: none; }
         }
     }
 }
-.sub-nav {
-    display: none;
-    @extend %list-unstyled;
 
-    @include mq-max(break(#{$menu-mobile-bk},-1)) {
-        display: block;
-        text-align: left;
-
-        @include absolute(left 30% top $menu-height+65 right 0);
-    }
-    @include mq-max(phone-plus) {
-        left: 50%;
-    }
-    a {
-        display: block;
-        font-size: em(17);
-        color: $info;
-        line-height: 2;
-
-        &:hover, &:active { background: none; }
-    }
-    .collapse-title { color: $brand-secondary; }
-    li {
-        float: left;
-        width: percentage(1/3);
-        margin-bottom: $gutter;
-        @include mq-max(phone-plus) { width: 100%; }
-    }
-}
 
 // == 行動版主選單
 @if $menu-mobile-has {

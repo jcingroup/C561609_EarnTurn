@@ -32,7 +32,7 @@ html {
 
 body {
     font-family: $font-family-base;
-    line-height: $line-height-base;
+    line-height: $line-height;
     color: $body-color;
     background: $body-bg;
 
@@ -40,9 +40,14 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+// Credit: https://github.com/suitcss/base
+[tabindex="-1"]:focus {
+    outline: none !important;
+}
+
 a {
     color: $link-color;
-    text-decoration: none;
+    @if $link-decoration { text-decoration: $link-decoration; }
     blur: expression(this.onFocus=this.blur()); // 清除虛線框
 
     @include transition(color .35s, background .3s);
@@ -56,16 +61,15 @@ a {
 
 img {
     vertical-align: middle;
-    // @include mq-max(break(tablet, -1)) { min-width: 100%; }
 }
 
-// @font-face {
-//     font-family: 'NeutraText';
-//     src: url('../font/Neutraface2Text-Book.eot'); // IE9
-//     src: url('../font/Neutraface2Text-Book.eot?#iefix') format('embedded-opentype'), // IE6-IE8
-//          local('Neutraface2Text-Book'),
-//          url('../font/Neutraface2Text-Book.otf') format("opentype");
-// }
+@font-face {
+    font-family: 'Champagne & Limousines';
+    src: url('../font/Champagne&Limousines.eot'); // IE9
+    src: url('../font/Champagne&Limousines.eot?#iefix') format('embedded-opentype'), // IE6-IE8
+         local('Champagne & Limousines'),
+         url('../font/Champagne&Limousines.otf') format("opentype");
+}
 
 .font-sp { font-family: $font-family-sp; }
 
@@ -74,15 +78,11 @@ img {
 // Headings
 // -----------------------------------------------
 h1, h2, h3, h4, h5, h6 {
-    font-family: $heading-font-family;
-    font-weight: $heading-font-weight;
-    line-height: $heading-line-height;
-    color: $heading-color;
-    margin-bottom: em($line-height-computed / 2);
-
-    small {
-        font-weight: normal;
-    }
+    @if $headings-margin-bottom { margin-bottom: $headings-margin-bottom; }
+    @if $headings-font-family   { font-family: $headings-font-family; }
+    @if $headings-font-weight   { font-weight: $headings-font-weight; }
+    @if $headings-line-height   { line-height: $headings-line-height; }
+    @if $headings-color         { color: $headings-color; }
 }
 
 @for $i from 1 through 6 {
@@ -91,20 +91,21 @@ h1, h2, h3, h4, h5, h6 {
     h#{$i} { font-size: em(nth($headings, $i)); }
 }
 
+.lead {
+  font-size: $lead-font-size;
+  font-weight: $lead-font-weight;
+}
+
 // Body text
 // -----------------------------------------------
-p {
-    margin: 0 0 em($line-height-computed / 2);
-    line-height: 1.5;
-}
-
 strong {
-    color: $brand-secondary;
+    font-size: em(17px);
+    color: $brand-primary;
 }
 
-// 副標題 Ex: (12px small font / 14px base font) * 100% = about 85%
 small {
-    // font-size: floor((100% * $font-size-sm / $font-size-base));
+    font-size: 80%;
+    font-weight: normal;
 }
 
 // 螢光筆註記
@@ -113,32 +114,9 @@ mark {
     padding: .2em;
 }
 
-hr, %hr {
-    height: 0;
-
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #f9f9f9;
-}
-%hr { height: 2px; }
-
 hr {
-    // margin: 35px 0;
-    // margin-top:    $line-height-computed;
-    // margin-bottom: $line-height-computed;
-    // border: 0;
-    // border-top: 1px solid #EAEFDE;
+    // margin-top: $spacer-y;
+    // margin-bottom: $spacer-y;
+    border: 0;
+    // border-top: $hr-border-width solid $hr-border-color;
 }
-
-// Lists
-// -----------------------------------------------
-// ul, ol {
-//     margin-bottom: ($line-height-computed / 2);
-
-//     ul, ol { margin-bottom: 0; }
-// }
-
-// address {
-//     margin-bottom: $line-height-computed;
-//     font-style: normal;
-//     line-height: $line-height-base;
-// }

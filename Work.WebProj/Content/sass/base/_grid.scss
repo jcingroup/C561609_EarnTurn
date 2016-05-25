@@ -37,8 +37,9 @@ $columns: $grid-columns;
 // ------------------------------------------------------------
 .row {
     @extend %clearfix;
+    margin-bottom: $gutter;
 
-    & + & { margin-top: $gutter; }
+    // & + & { margin-top: $gutter; }
 }
 
 // 置中等比例(1/3) (1/5)

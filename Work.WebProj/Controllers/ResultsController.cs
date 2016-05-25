@@ -7,12 +7,12 @@ using DotWeb.Controller;
 
 namespace DotWeb.WebApp.Controllers
 {
-    public class ProductsController : WebUserController
+    public class ResultsController : WebUserController
     {
-        // GET: Products
+        // GET: Results
         public ActionResult Index()
         {
-            return View("Product");
+            return View("Results");
         }
     }
 }
