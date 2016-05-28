@@ -107,3 +107,12 @@ $td-color:                     darken($warning, 5);
 // ## module/animate - search,lan-nav
 $fadeIn:                       true;
 $slide-down:                   true;
+
+$figure-align:                 center;
+$figure-inline:                true;
+// $figure-mg:                    0;
+$figcaption-full:              true;
+$figcaption-bg:                rgba($brand-primary,.75);
+$figcaption-color:             lighten($brand-secondary,60);
+$figcaption-size:              21px;
+$figcaption-pd:                12px 10px;

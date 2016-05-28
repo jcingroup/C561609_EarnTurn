@@ -72,6 +72,10 @@
                 background-image: url(#{$img-path}/#{nth($menu-item,$i)}/banner.jpg),radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
             }
         }
+        .ContactUs & {
+            background-image: url(#{$img-path}/ContactUs/banner.jpg),-webkit-radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
+            background-image: url(#{$img-path}/ContactUs/banner.jpg),radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
+        }
         h2 {
             margin-top: 120px;
             color: lighten($warning,40);

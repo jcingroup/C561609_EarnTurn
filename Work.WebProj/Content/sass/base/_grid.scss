@@ -57,13 +57,15 @@ $columns: $grid-columns;
     .col-#{$i} { @include make-col-span($i, $columns); }
 }
 
-[class*="col-"] {
+[class*="col"] {
     &:first-child { padding-left: 0; }
     &:last-child { padding-right: 0; }
 }
 
 [data-col*="first"] { padding-left: 0; }
 [data-col*="last"] { padding-right: 0; }
+
+.pd-0 { padding: 0; }
 
 
 // RWD

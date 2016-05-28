@@ -71,7 +71,7 @@ $list-dot-color: $brand-primary;
     .list-pic {
         @extend %list-inline;
 
-        li { margin: 1%}
+        li { margin: 10px 3px; }
         img {
             border: $tb-border;
             padding: 5px;

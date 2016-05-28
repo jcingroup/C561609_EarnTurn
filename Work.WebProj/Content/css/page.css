@@ -284,7 +284,7 @@ a {
   -webkit-transition: color 0.35s, background 0.3s;
   transition: color 0.35s, background 0.3s; }
   a:hover, a:active, a.active {
-    color: #5B2F5D; }
+    color: #2F3190; }
   a:focus {
     outline: none; }
 
@@ -314,7 +314,7 @@ h3 {
   font-size: 2em; }
 
 h4 {
-  font-size: 1.5em; }
+  font-size: 1.5625em; }
 
 h5 {
   font-size: 1.25em; }
@@ -364,13 +364,13 @@ hr {
   background-color: transparent;
   border: 0; }
 
-.list-inline, .list-pic, .breadcrumb, .list-unstyled, .list-dot, .list-time, .swiper-wrapper {
+.list-inline, .list-pic, .breadcrumb, .list-unstyled, .list-dot, .list-time, .swiper-wrapper, .tabs {
   list-style: none; }
 
 .list-inline > li, .list-pic > li, .breadcrumb > li {
   display: inline-block; }
 
-.goTop {
+.goTop, figcaption {
   -webkit-transition: all 0.35s;
   transition: all 0.35s; }
 
@@ -403,11 +403,11 @@ td {
 
 /*      layout
 -----------------------------------------------------------------------*/
-.wrap {
+.wrap, .Service #main, .Results #main {
   max-width: 1200px;
   margin: 0 60px; }
   @media (min-width: 87.5em) {
-    .wrap {
+    .wrap, .Service #main, .Results #main {
       margin: 0 auto; } }
 
 html, body {
@@ -642,7 +642,7 @@ img.float-l {
     padding-top: 30px; }
 
 .list-pic li {
-  margin: 1%; }
+  margin: 10px 3px; }
 .list-pic img {
   border: 1px solid #E3D5C1;
   padding: 5px; }
@@ -766,6 +766,9 @@ img.float-l {
   .Activity #banner {
     background-image: url(../images/Activity/banner.jpg), -webkit-radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
     background-image: url(../images/Activity/banner.jpg), radial-gradient(#2D5D7C 10%, #2A1F3C 90%); }
+  .ContactUs #banner {
+    background-image: url(../images/ContactUs/banner.jpg), -webkit-radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
+    background-image: url(../images/ContactUs/banner.jpg), radial-gradient(#2D5D7C 10%, #2A1F3C 90%); }
   #banner h2 {
     margin-top: 120px;
     color: #f3d689;
@@ -807,10 +810,48 @@ img.float-l {
   padding: 2px 5px;
   margin: 0 5px; }
 
+.tabs .active a {
+  color: #2F3190; }
+
+figcaption, figure > a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+figcaption {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  font-size: 21px;
+  color: #f0d0b4;
+  background: rgba(91, 47, 93, 0.75);
+  padding: 12px 10px; }
+  figcaption::before, figcaption::after {
+    pointer-events: none; }
+
+figure {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center; }
+  figure img {
+    position: relative; }
+  figure > a {
+    z-index: 3;
+    white-space: nowrap;
+    opacity: 0; }
+  figure h4, figure p {
+    margin: 0; }
+
 #main img {
   max-width: 100%; }
 #main section {
   padding: 30px 0; }
+.Service #main, .Results #main {
+  padding-bottom: 40px; }
 
 .title {
   font-size: 2em;
@@ -822,19 +863,34 @@ img.float-l {
   .Future .title {
     margin-top: 15px; }
 
+p {
+  margin-bottom: 1rem;
+  font-size: 0.9375em; }
+
 .content {
-  width: 83.33333%; }
+  padding-right: 7.5px;
+  width: 75%; }
   .content, .sidebar {
     float: left;
     min-height: 1px;
     position: relative; }
 
 .sidebar {
-  width: 16.66667%; }
-
-p {
-  margin-bottom: 1rem;
-  font-size: 0.9375em; }
+  padding-left: 7.5px;
+  width: 25%;
+  float: right;
+  text-align: left;
+  background: url(../images/sidebar_bg.png) 15px 0 no-repeat; }
+  .sidebar h4 {
+    margin-left: 25px;
+    margin-bottom: 20px; }
+  .sidebar a {
+    display: block;
+    font-size: 1.1875em;
+    line-height: 1.2;
+    padding: 12px 0;
+    padding-left: 25px;
+    background: url(../images/sidebar_line.png) 0 0 no-repeat; }
 
 .AboutUs th {
   width: 16%;
@@ -868,3 +924,32 @@ p {
 
 #map-canvas {
   height: 380px; }
+
+.list-bg dt {
+  background: rgba(91, 47, 93, 0.8);
+  border-bottom: 2px solid #ce9c15;
+  color: #fff;
+  padding: 9px 12px;
+  border-radius: 8px 8px 0 0;
+  text-align: center; }
+.list-bg dd {
+  background: rgba(95, 55, 19, 0.5);
+  padding: 12px;
+  color: #fff;
+  border-radius: 0 0 8px 8px;
+  text-align: left; }
+
+figure:nth-of-type(3n+1) figcaption {
+  background: none; }
+figure img {
+  min-width: 100%; }
+figure p {
+  font-size: 0.71429em; }
+figure.col-4, figure.col-3, figure.col-6 {
+  padding: 0; }
+figure.col-4 img {
+  max-height: 222px; }
+
+.ContactUs [class*="btn"] {
+  font-size: 1.8125em;
+  line-height: 180px; }

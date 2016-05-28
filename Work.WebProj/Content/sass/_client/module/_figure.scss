@@ -15,6 +15,12 @@ $figure-effect:           false !default;
 $figure-inline:           false !default;
 $figure-inline-hack:      false !default;
 
+$figcaption-full:         false !default;
+$figcaption-size:         false !default;
+$figcaption-color:        false !default;
+$figcaption-bg:           false !default;
+$figcaption-pd:           false !default;
+
 // 圖片樣式
 $figure-img-full:         false !default;
 $figure-img-width:        false !default;
@@ -29,7 +35,7 @@ $figure-p-color:          false !default;
 $figure-p-pos:            false !default;
 
 // common style
-figcaption, figure > a {
+%figure-overlay {
     @include size(100%);
     @include absolute(left 0 top 0);
 }
@@ -42,6 +48,12 @@ figcaption {
     @include prefix(backface-visibility, hidden);
 
     &::before, &::after { pointer-events: none; }
+
+    @if $figcaption-full  { @extend %figure-overlay; }
+    @if $figcaption-size  { font-size: $figcaption-size; }
+    @if $figcaption-color { color: $figcaption-color; }
+    @if $figcaption-bg    { background: $figcaption-bg; }
+    @if $figcaption-pd    { padding: $figcaption-pd; }
 }
 
 figure {
@@ -87,6 +99,7 @@ figure {
     }
 
     > a {
+        @extend %figure-overlay;
         z-index: z(figure);
         white-space: nowrap;
         opacity: 0;

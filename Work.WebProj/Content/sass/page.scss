@@ -7,12 +7,8 @@ $states:             true;
 
 $font-size-h2:       55px;
 $font-size-h3:       32px;
+$font-size-h4:       25px;
 
-$figure-align:       center;
-$figure-width:       ((100%/3) - 1%);
-$figure-inline:      false;
-$figure-img-height:  115px;
-$figure-title-size:  18px;
 
 // import
 // ------------------------------------------------------------
@@ -31,6 +27,8 @@ $figure-title-size:  18px;
 
 @import "_client/module/breadcrumb";
 @import "_client/module/label";
+@import "_client/module/tab";
+@import "_client/module/figure";
 
 
 // main
@@ -38,6 +36,12 @@ $figure-title-size:  18px;
 #main {
     img { max-width: 100%; }
     section { padding: $gutter*2 0; }
+
+    .Service &,
+    .Results & {
+        @extend %center;
+        padding-bottom: 40px;
+    }
 }
 .title {
     font-size: em(32);
@@ -52,23 +56,42 @@ $figure-title-size:  18px;
         margin-top: $gutter;
     }
 }
-
-// 2欄設計
-.content {
-    @include cols-reset($first: true, $last: true);
-    @include make-col-span(10,12);
-}
-
-// 左欄
-.sidebar {
-    @include cols-reset($first: true);
-    @include make-col-span(2,12);
-}
-
 p {
     margin-bottom: $spacer;
     font-size: em(15);
 }
+
+// == 2欄設計
+// 主欄
+.content {
+    @include cols-reset($first: true);
+    @include make-col-span(9,12);
+}
+
+// 側欄
+.sidebar {
+    @include cols-reset($theme: right, $last: true);
+    @include make-col-span(3,12);
+    float: right;
+    text-align: left;
+
+    background: url(#{$img-path}/sidebar_bg.png) 15px 0 no-repeat;
+
+    h4 {
+        margin-left: 25px;
+        margin-bottom: 20px;
+    }
+
+    a {
+        display: block;
+        font-size: em(19);
+        line-height: 1.2;
+        padding: 12px 0;
+        padding-left: 25px;
+        background: url(#{$img-path}/sidebar_line.png) 0 0 no-repeat;
+    }
+}
+
 
 // == about
 .AboutUs {
@@ -120,4 +143,49 @@ p {
     height: 380px;
 }
 
-// == 企業展望
+// == 專業服務
+.list-bg {
+    dt {
+        background: rgba($brand-primary,.8);
+        border-bottom: 2px solid lighten($warning,10);
+        color: #fff;
+        padding: 9px 12px;
+        border-radius: 8px 8px 0 0;
+        text-align: center;
+    }
+    dd {
+        background: rgba($brand-secondary,.5);
+        padding: 12px;
+        color: #fff;
+        border-radius: 0 0 8px 8px;
+        text-align: left;
+    }
+}
+figure {
+    &:nth-of-type(3n+1) {
+        figcaption {
+            // background: rgba($warning,.85);
+            background: none;
+        }
+    }
+    img {
+        min-width: 100%;
+    }
+    p {
+        font-size: em(15,21);
+    }
+    &.col-4, &.col-3, &.col-6 {
+        padding: 0;
+    }
+    &.col-4 {
+        img { max-height: 222px; }
+    }
+}
+
+// == 人力招募
+.ContactUs {
+    [class*="btn"] {
+        font-size: em(29);
+        line-height: 180px;
+    }
+}
