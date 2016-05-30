@@ -149,27 +149,12 @@ p {
 }
 .Service_pic1 { background-image: url(#{$img-path}/Service/p1/pic.png); }
 .Service_pic2 { background-image: url(#{$img-path}/Service/p1/pic_2.png); }
+.doing {
+    font-size: em(27);
+    line-height: 306px;
+    background: url(#{$img-path}/Service/doing_bg.png) center center no-repeat;
+}
 
-// figure {
-//     &:nth-of-type(3n+1) {
-//         figcaption {
-//             // background: rgba($warning,.85);
-//             background: none;
-//         }
-//     }
-//     img {
-//         min-width: 100%;
-//     }
-//     p {
-//         font-size: em(15,21);
-//     }
-//     &.col-4, &.col-3, &.col-6 {
-//         padding: 0;
-//     }
-//     &.col-4 {
-//         img { max-height: 222px; }
-//     }
-// }
 
 // == 人力招募
 .ContactUs {

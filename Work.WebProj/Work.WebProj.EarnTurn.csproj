@@ -350,6 +350,7 @@
     <Content Include="Content\images\Results\p4\pic4.jpg" />
     <Content Include="Content\images\Results\p4\pic5.jpg" />
     <Content Include="Content\images\Service\banner.jpg" />
+    <Content Include="Content\images\Service\doing_bg.png" />
     <Content Include="Content\images\Service\p1\pic.png" />
     <Content Include="Content\images\Service\p1\pic2.jpg" />
     <Content Include="Content\images\Service\p1\pic2_2.jpg" />
@@ -435,7 +436,6 @@
     <Compile Include="_Code\Ashx\ValidateCode.ashx.cs">
       <DependentUpon>ValidateCode.ashx</DependentUpon>
     </Compile>
-    <Content Include="Content\css\editor.css" />
     <Content Include="Content\css\grid.css" />
     <Content Include="Content\css\index.css" />
     <Content Include="Content\css\page.css" />
@@ -489,19 +489,6 @@
     <Content Include="ckeditor\config.js" />
     <Content Include="ckeditor\contents.css" />
     <Content Include="ckeditor\styles.js" />
-    <Content Include="Scripts\build\app\m_change_password.js" />
-    <Content Include="Scripts\build\app\m_community.js" />
-    <Content Include="Scripts\build\app\m_community_news.js" />
-    <Content Include="Scripts\build\app\m_edit.js" />
-    <Content Include="Scripts\build\app\m_edit_detail.js" />
-    <Content Include="Scripts\build\app\m_login.js" />
-    <Content Include="Scripts\build\app\m_matter.js" />
-    <Content Include="Scripts\build\app\m_menu.js" />
-    <Content Include="Scripts\build\app\m_menu_set.js" />
-    <Content Include="Scripts\build\app\m_roles.js" />
-    <Content Include="Scripts\build\app\m_users.js" />
-    <Content Include="Scripts\build\app\vendors.js" />
-    <Content Include="Scripts\build\app\w_sell_list.js" />
     <Content Include="Scripts\cdn\BootSideMenu.js" />
     <Content Include="Scripts\cdn\bootstrap.min.js" />
     <Content Include="Scripts\cdn\codrops\classie.js" />
@@ -739,6 +726,7 @@
     <Folder Include="Areas\Active\Views\Shared\" />
     <Folder Include="Areas\Base\Views\Shared\" />
     <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Scripts\build\app\" />
     <Folder Include="Scripts\typings\sortablejs\" />
     <Folder Include="_Code\CReport\" />
   </ItemGroup>

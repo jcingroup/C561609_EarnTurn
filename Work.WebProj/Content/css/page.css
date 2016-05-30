@@ -914,6 +914,11 @@ p {
 .Service_pic2 {
   background-image: url(../images/Service/p1/pic_2.png); }
 
+.doing {
+  font-size: 1.6875em;
+  line-height: 306px;
+  background: url(../images/Service/doing_bg.png) center center no-repeat; }
+
 .ContactUs {
   text-align: center; }
   .ContactUs .col-1-3 {
