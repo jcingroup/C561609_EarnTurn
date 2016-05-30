@@ -28,7 +28,7 @@ $font-size-h4:       25px;
 @import "_client/module/breadcrumb";
 @import "_client/module/label";
 @import "_client/module/tab";
-@import "_client/module/figure";
+// @import "_client/module/figure";
 
 
 // main
@@ -37,8 +37,7 @@ $font-size-h4:       25px;
     img { max-width: 100%; }
     section { padding: $gutter*2 0; }
 
-    .Service &,
-    .Results & {
+    .Service & {
         @extend %center;
         padding-bottom: 40px;
     }
@@ -126,7 +125,7 @@ p {
 // 聯絡我們
 .contacts {
     @include absolute(right 0 top 0 bottom 0);
-    background: rgba(#42626E,.92);
+    background: rgba($success,.92);
     color: #E3DED5;
     padding: $gutter*2;
 
@@ -144,48 +143,47 @@ p {
 }
 
 // == 專業服務
-.list-bg {
-    dt {
-        background: rgba($brand-primary,.8);
-        border-bottom: 2px solid lighten($warning,10);
-        color: #fff;
-        padding: 9px 12px;
-        border-radius: 8px 8px 0 0;
-        text-align: center;
-    }
-    dd {
-        background: rgba($brand-secondary,.5);
-        padding: 12px;
-        color: #fff;
-        border-radius: 0 0 8px 8px;
-        text-align: left;
-    }
+.bg-pic {
+    background-position: right bottom;
+    background-repeat: no-repeat;
 }
-figure {
-    &:nth-of-type(3n+1) {
-        figcaption {
-            // background: rgba($warning,.85);
-            background: none;
-        }
-    }
-    img {
-        min-width: 100%;
-    }
-    p {
-        font-size: em(15,21);
-    }
-    &.col-4, &.col-3, &.col-6 {
-        padding: 0;
-    }
-    &.col-4 {
-        img { max-height: 222px; }
-    }
-}
+.Service_pic1 { background-image: url(#{$img-path}/Service/p1/pic.png); }
+.Service_pic2 { background-image: url(#{$img-path}/Service/p1/pic_2.png); }
+
+// figure {
+//     &:nth-of-type(3n+1) {
+//         figcaption {
+//             // background: rgba($warning,.85);
+//             background: none;
+//         }
+//     }
+//     img {
+//         min-width: 100%;
+//     }
+//     p {
+//         font-size: em(15,21);
+//     }
+//     &.col-4, &.col-3, &.col-6 {
+//         padding: 0;
+//     }
+//     &.col-4 {
+//         img { max-height: 222px; }
+//     }
+// }
 
 // == 人力招募
 .ContactUs {
-    [class*="btn"] {
+    text-align: center;
+
+    .col-1-3 {
         font-size: em(29);
-        line-height: 180px;
+        line-height: 185px;
+        margin: $spacer;
+        border: $hr-border;
+        background-position: 96% 90%;
+        background-repeat: no-repeat;
+
+        &:first-of-type { background-image: url(#{$img-path}/ContactUs/icon.gif); }
+        &:last-of-type { background-image: url(#{$img-path}/ContactUs/icon2.gif); }
     }
 }

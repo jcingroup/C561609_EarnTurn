@@ -9,15 +9,15 @@ $page:                  false !default;           // 內頁用
 $brand-primary:         #5B2F5D !default;             // 主色
 $brand-secondary:       #5F3713 !default;             // 輔色
 $brand-gray:            #E0E2DE !default;             // 輔色
-$success:               #368B39 !default;             // 綠
-$info:                  #2F3190 !default;             // 藍
+$success:               #42626E !default;             // 綠
+$info:                  #241F50 !default;             // 藍
 $warning:               #A07910 !default;             // 黃
 $error:                 #B84C54 !default;             // 紅
 
 $font-family-sp:        'Champagne & Limousines','Open Sans',Verdana,Arial,Helvetica,sans-serif;
 
 $headings-font-family:  false !default;
-$headings-color:        darken($info,20) !default; // #1F213B
+$headings-color:        $info !default; // #1F213B
 
 
 // == layout
@@ -112,7 +112,7 @@ $figure-align:                 center;
 $figure-inline:                true;
 // $figure-mg:                    0;
 $figcaption-full:              true;
-$figcaption-bg:                rgba($brand-primary,.75);
+// $figcaption-bg:                rgba($brand-primary,.95);
 $figcaption-color:             lighten($brand-secondary,60);
 $figcaption-size:              21px;
 $figcaption-pd:                12px 10px;

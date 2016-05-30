@@ -81,14 +81,8 @@ $blockquote-small-color:     $gray-light !default;
 $blockquote-font-size:       ($font-size-base * 1.25) !default;
 $blockquote-border-color:    $gray-lighter !default;
 
-$hr-border-color:            rgba(0,0,0,.1) !default;
-$hr-border-width:            1px !default;
+$hr-border:                  1px solid #E3D5C1 !default;
 
-$dt-font-weight:             bold !default;
-
-$nested-kbd-font-weight:     bold !default;
-
-$list-inline-padding:        5px !default;
 
 
 // == Components

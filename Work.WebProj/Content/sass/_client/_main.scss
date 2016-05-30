@@ -64,21 +64,23 @@
 
         background-position: center 0;
         background-repeat: no-repeat;
+        background-color: #29203D;
         height: 260px;
 
         @for $i from 1 through length($menu-item) {
             .#{nth($menu-item,$i)} & {
-                background-image: url(#{$img-path}/#{nth($menu-item,$i)}/banner.jpg),-webkit-radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
-                background-image: url(#{$img-path}/#{nth($menu-item,$i)}/banner.jpg),radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
+                // background-image: url(#{$img-path}/#{nth($menu-item,$i)}/banner.jpg),-webkit-radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
+                // background-image: url(#{$img-path}/#{nth($menu-item,$i)}/banner.jpg),radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
+                background-image: url(#{$img-path}/#{nth($menu-item,$i)}/banner.jpg);
             }
         }
         .ContactUs & {
-            background-image: url(#{$img-path}/ContactUs/banner.jpg),-webkit-radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
-            background-image: url(#{$img-path}/ContactUs/banner.jpg),radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
+            // background-image: url(#{$img-path}/ContactUs/banner.jpg),-webkit-radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
+            background-image: url(#{$img-path}/ContactUs/banner.jpg);
         }
         h2 {
             margin-top: 120px;
-            color: lighten($warning,40);
+            color: lighten($brand-secondary,68);
             text-shadow: 0 0 7px rgba(#000,.9);
         }
     }

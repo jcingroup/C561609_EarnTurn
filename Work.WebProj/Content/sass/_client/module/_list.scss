@@ -1,6 +1,6 @@
 ﻿@charset "UTF-8";
 
-$list-dot-color: $brand-primary;
+$list-dot-color: lighten($brand-secondary,50);
 // $list-circle-bg: $brand-primary;
 
 // list
@@ -20,8 +20,8 @@ $list-dot-color: $brand-primary;
     .list-dot {
 
         li {
-            @include icon-dot(left, 5px, $list-dot-color, left 0 top 45%);
-            line-height: 1.75;
+            @include icon-dot(left, 5px, $list-dot-color, left 0 top 9px);
+            line-height: 1.35;
             margin-bottom: $gutter/2;
         }
     }
@@ -68,6 +68,7 @@ $list-dot-color: $brand-primary;
         }
     }
 
+    // 圖片列表
     .list-pic {
         @extend %list-inline;
 
@@ -80,6 +81,26 @@ $list-dot-color: $brand-primary;
             display: block;
             text-align: center;
             font-size: em(13);
+        }
+    }
+
+    // 有背景色列表
+    .list-bg {
+        margin-bottom: $spacer;
+        dt {
+            background-color: rgba($brand-primary,.8);
+            border-bottom: 2px solid lighten($warning,10);
+            color: #fff;
+            padding: 9px 12px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+        dd {
+            background-color: rgba($brand-secondary,.5);
+            padding: 12px;
+            color: #fff;
+            border-radius: 0 0 8px 8px;
+            text-align: left;
         }
     }
 }

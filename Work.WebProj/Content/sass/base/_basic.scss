@@ -115,8 +115,7 @@ mark {
 }
 
 hr {
-    // margin-top: $spacer-y;
-    // margin-bottom: $spacer-y;
+    margin: $spacer*2 0;
     border: 0;
-    // border-top: $hr-border-width solid $hr-border-color;
+    border-top: $hr-border;
 }

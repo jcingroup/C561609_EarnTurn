@@ -43,7 +43,7 @@ img.float-l { margin-right: $gutter;}
 // ------------------------------------------------------------
 @if $states {
 
-    .text-white { color: #fff;; }
+    .text-white { color: #fff; }
 
     @each $type, $color in $state-type {
         .text-#{$type} {
@@ -51,10 +51,11 @@ img.float-l { margin-right: $gutter;}
         }
         .bg-#{$type} {
             @if $index {
-                background: lighten($color, 4.5%);
+                background: lighten($color, 4.5);
             }
             @if $page {
-                background: rgba($color, .8);
+                // background: rgba($color, .8);
+                background: rgba($color,.9);
             }
             @extend .text-white;
         }
