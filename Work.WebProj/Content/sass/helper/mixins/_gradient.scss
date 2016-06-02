@@ -14,7 +14,9 @@
 }
 
 @mixin radial-gradient($colors...) {
-    background: nth(nth($colors, 1), 1);
+    // 用最後的顏色
+    $last-color: length($colors);
+    background: nth(nth($colors, $last-color), 1);
     @include prefix(background, radial-gradient($colors), $type:els);
 }
 

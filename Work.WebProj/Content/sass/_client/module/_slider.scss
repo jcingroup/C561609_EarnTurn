@@ -28,7 +28,7 @@ $swiper-slider:        false !default;
 //     @include pos-center;
 // }
 // 滑動為淡入淡出模式時加
-// .swiper-slide-next { opacity: 0 !important; }
+// .swiper-slide-fade { opacity: 0 !important; }
 
 // 分頁圓點
 @if $swiper-pagination {

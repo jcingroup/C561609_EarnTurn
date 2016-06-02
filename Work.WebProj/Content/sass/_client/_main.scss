@@ -6,22 +6,11 @@
 // 共用module
 @import "module/classes";
 @import "module/list";
-@import "module/btn";
-@import "module/slider";
 @import "module/goTop";
-// @import "module/animate";
 
 
 // 本次專案樣式
 // ----------------------------------------------------------------------
-
-// #wrapper {
-//     @include el(before) {
-//         @include absolute(left 0 right 0 top 0);
-//         background: $brand-primary url(#{$img-path}/bg.gif) repeat-x 0 56px;
-//         height: 120px;
-//     }
-// }
 
 // 頂端選單
 .top-nav {
@@ -42,7 +31,6 @@
 }
 
 #banner {
-
     @if $index {
         // img w1200 x h556
         padding-top: 28px;
@@ -52,13 +40,13 @@
 
         @include radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
         @include el(after) {
-            @include pos-center(x);
             top: 28px;
             background: url(#{$img-path2}/banner_border.png) center center no-repeat;
             width: 1200px;
             height: 556px;
             z-index: 3;
         }
+        img, &::after { @include pos-center(x); }
     }
     @if $page {
 
@@ -69,17 +57,15 @@
 
         @for $i from 1 through length($menu-item) {
             .#{nth($menu-item,$i)} & {
-                // background-image: url(#{$img-path}/#{nth($menu-item,$i)}/banner.jpg),-webkit-radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
-                // background-image: url(#{$img-path}/#{nth($menu-item,$i)}/banner.jpg),radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
                 background-image: url(#{$img-path}/#{nth($menu-item,$i)}/banner.jpg);
             }
         }
         .ContactUs & {
-            // background-image: url(#{$img-path}/ContactUs/banner.jpg),-webkit-radial-gradient(#2D5D7C 10%, #2A1F3C 90%);
             background-image: url(#{$img-path}/ContactUs/banner.jpg);
         }
         h2 {
-            margin-top: 120px;
+            position: relative;
+            top: 120px;
             color: lighten($brand-secondary,68);
             text-shadow: 0 0 7px rgba(#000,.9);
         }

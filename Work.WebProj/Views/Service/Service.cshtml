@@ -8,6 +8,12 @@
 
 @section Scripts {
     <script src="~/Content/js/tab.js"></script>
+    <script src="~/Content/js/jquery-scrolltofixed.js"></script>
+    <script>
+        $('.sidebar').scrollToFixed({
+            marginTop: 40
+        });
+    </script>
 }
 
 @Html.Partial("sidebar")
@@ -252,8 +258,14 @@
                 <img src="~/Content/images/Service/p5/pic4.jpg" alt="地面清洗">
                 <span>地面清洗</span>
             </li>
+        </ol>
+        <ol class="list-pic">
             <li>
                 <img src="~/Content/images/Service/p5/pic5.jpg" alt="專人引導車輛進出">
+                <span>專人引導車輛進出</span>
+            </li>
+            <li>
+                <img src="~/Content/images/Service/p5/pic7.jpg" alt="專人引導車輛進出">
                 <span>專人引導車輛進出</span>
             </li>
             <li>

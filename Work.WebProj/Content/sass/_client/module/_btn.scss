@@ -1,55 +1,47 @@
 @charset "UTF-8";
 
+// 下為基本樣式(屬性固定)
 $btn-display:            inline-block !default;
-$btn-padding:            12px 20px !default;
-$btn-transition:         'background .35s, color .5s' !default;
+$btn-pd:                 12px 20px !default;
+$btn-border-radius:      5px !default;
+$btn-effect:             'background .35s, color .5s' !default;
 
-// 下為單選自定樣式，變數有值才會顯示，
-// 當變數設為 false or null 則不顯示
-$btn-font-family:        false !default;
-$btn-font-weight:        false !default;
+$btn-state-color:        #fff !default;
+$btn-disabled:           $gray-light !default;
 $btn-font-size:          18px !default;
+$btn-font-family:        $font-family-sp !default;
 $btn-line-height:        1.01 !default;
 $btn-letter-spacing:     1px !default;
 
-$btn-min-width:          false !default;
+// 下為可自定屬性及樣式
+$btn-styles: (
+    color:               #fff,
+    background:          $brand-primary
+) !default;
 
-$btn-state-color:        #fff !default;
-$btn-color:              $btn-state-color !default;
-$btn-bg:                 $brand-primary !default;
-$btn-disabled:           $gray-light !default;
-
-$btn-border:             false !default;
-$btn-border-radius:      5px !default;
-$btn-shadow:             false !default; // 1px 1px 2px hsla(0,0,0,.2)
-
-$btn-hover-bg:           lighten($brand-primary, 6%) !default;
-$btn-hover-border:       false !default;
-$btn-hover-color:        false !default;
-$btn-hover-shadow:       false !default;
+$btn-hover-styles: (
+    background:          lighten($brand-primary, 6%)
+) !default;
 
 
 // button
 // ----------------------------------------------
 
 .btn {
-    display: $btn-display;
-    padding: $btn-padding;
-    @include transition($btn-transition);
+    // 下為基本樣式(屬性固定)
+    @if $btn-display         { display: $btn-display; }
+    @if $btn-pd              { padding: $btn-pd; }
+    @if $btn-border-radius   { border-radius: $btn-border-radius; }
+    @if $btn-font-size       { font-size: em($btn-font-size); }
+    @if $btn-font-family     { font-family: $btn-font-family; }
+    @if $btn-line-height     { line-height: $btn-line-height; }
+    @if $btn-letter-spacing  { letter-spacing: $btn-letter-spacing; }
+    @if $btn-effect          { @include transition($btn-effect); }
 
-    // 下為單選自定樣式，變數有值才會顯示，
-    // 當變數設為 false or null 則不顯示
-    @if $btn-color          { color: $btn-color; }
-    @if $btn-bg             { background: $btn-bg; }
-    @if $btn-border         { border: $btn-border; }
-    @if $btn-border-radius  { border-radius: $btn-border-radius; }
-    @if $btn-shadow         { box-shadow: $btn-shadow; }
-    @if $btn-min-width      { min-width: $btn-min-width; }
-    @if $btn-font-family    { font-family: $btn-font-family; }
-    @if $btn-font-size      { font-size: em($btn-font-size); }
-    @if $btn-font-weight    { font-weight: $btn-font-weight; }
-    @if $btn-line-height    { line-height: $btn-line-height; }
-    @if $btn-letter-spacing { letter-spacing: $btn-letter-spacing; }
+    // 下為自定屬性與樣式
+    @each $attribute, $value in $btn-styles {
+        #{$attribute}: #{$value};
+    }
 
     &, &:active, &.active {
         &:focus {
@@ -65,10 +57,9 @@ $btn-hover-shadow:       false !default;
     }
     &:hover, &:active, &.active {
     // &:hover, &:focus, &.focus {
-        @if $btn-hover-bg     { background: $btn-hover-bg; }
-        @if $btn-hover-border { border-color: $btn-hover-color; }
-        @if $btn-hover-color  { color: $btn-hover-color; }
-        @if $btn-hover-shadow { box-shadow: $btn-hover-shadow; }
+        @each $attribute, $value in $btn-hover-styles {
+            #{$attribute}: #{$value};
+        }
     }
 }
 

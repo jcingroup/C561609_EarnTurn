@@ -1,22 +1,37 @@
 @charset "UTF-8";
 
-$goTop-position:        bottom 30px right 10px !default;
-$goTop-size:            42px 23px !default;
-$goTop-img:             'goTop.png' !default;
+$goTop-pos:        bottom 30px right 20px !default;
+$goTop-effect:     'color 1s, opacity .5s' !default;
+
+$goTop-styles: (
+    opacity: .65,
+    font-size: 35px,
+    color: $footer-color
+) !default;
+
+$goTop-hover-styles: (
+    opacity: 1,
+    color: $footer-color
+) !default;
 
 //
 // goTop
 // --------------------------------------------------
 
 .goTop {
-    @extend %effect-all;
     display: none;
     z-index: z(goTop);
 
-    opacity: .65;
+    @include fixed($goTop-pos);
+    @include transition($goTop-effect);
 
-    @include fixed($goTop-position);
-    @include text-pic(#{$goTop-img}, nth($goTop-size, 1), nth($goTop-size, 1));
+    @each $attribute, $value in $goTop-styles {
+        #{$attribute}: #{$value};
+    }
 
-    &:hover, &:active { opacity: 1; }
+    &:hover, &:active {
+        @each $attribute, $value in $goTop-hover-styles {
+            #{$attribute}: #{$value};
+        }
+    }
 }

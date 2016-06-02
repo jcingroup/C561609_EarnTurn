@@ -9,11 +9,13 @@ $font-size-h2:       55px;
 $font-size-h3:       32px;
 $font-size-h4:       25px;
 
+// 本次專案專用變數
+@import "_client/settings";
+
 
 // import
 // ------------------------------------------------------------
-@import "_client/settings"; // 覆蓋掉下面的變數
-
+// 共用
 @import "helper/function";
 @import "helper/var";
 @import "helper/mixins";
@@ -25,16 +27,17 @@ $font-size-h4:       25px;
 @import "_client/layout";
 @import "_client/main";
 
+// 本頁專用
 @import "_client/module/breadcrumb";
 @import "_client/module/label";
 @import "_client/module/tab";
-// @import "_client/module/figure";
 
 
 // main
 // ------------------------------------------------------------
 #main {
     img { max-width: 100%; }
+
     section { padding: $gutter*2 0; }
 
     .Service & {
@@ -88,6 +91,11 @@ p {
         padding: 12px 0;
         padding-left: 25px;
         background: url(#{$img-path}/sidebar_line.png) 0 0 no-repeat;
+    }
+
+    &.fixed {
+        @include fixed(top 40px left 72.6% right 0);
+        @include mq(wider) { left: 68.1%; }
     }
 }
 

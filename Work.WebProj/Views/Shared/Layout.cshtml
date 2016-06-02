@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@ViewBag.Title:@Resources.Res.System_FrontName::</title>
+    <title>@Resources.Res.System_FrontName::@ViewBag.Title</title>
     <script src="~/Scripts/cdn/BrowerInfo.js"></script>
     <script>
         var gb_approot = '@Url.Content("~")';
@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="~/favicon.ico"/>
     <link rel="bookmark" href="~/favicon.ico"/>
     <link rel="stylesheet" href="~/Content/css/vendor/swiper.min.css">
-    <link rel="stylesheet" href="~/Content/css/vendor/icomoon.css?v=@CommWebSetup.CacheVer">
+    <link rel="stylesheet" href="~/Content/css/vendor/themify-icons.css?v=@CommWebSetup.CacheVer">
     <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700'>
     <link rel="stylesheet" href="~/Content/css/grid.css?v=@CommWebSetup.CacheVer">
     @if (ViewBag.IsFirstPage)
@@ -58,7 +58,7 @@
                     @* 圖片尺寸:w1200 x h556 *@
                     <li class="swiper-slide"><img src="~/Content/images/Index/banner1.jpg"></li>
                     <li class="swiper-slide"><img src="~/Content/images/Index/banner2.jpg"></li>
-                    @* <li class="swiper-slide"><img src="~/Content/images/Index/banner3.jpg"></li> *@
+                    <li class="swiper-slide"><img src="~/Content/images/Index/banner3.jpg"></li>
                 </ul>
                 @* <div class="swiper-pagination"></div> *@
             </div><!-- banner //-->
@@ -68,14 +68,7 @@
         }
         else
         {
-            <div id="banner" class="swiper-container">
-                <!-- <ul class="swiper-wrapper">
-                    @* 圖片尺寸:w1920 x h238 *@
-                    <li class="swiper-slide"><img src="~/Content/images/banner.jpg"></li>
-                    @* <li class="swiper-slide"><img src="~/Content/images/banner2.jpg"></li> *@
-                    @* <li class="swiper-slide"><img src="~/Content/images/banner3.jpg"></li> *@
-                </ul> -->
-                @* <div class="swiper-pagination"></div> *@
+            <div id="banner">
                 <h2>@ViewBag.Target</h2>
             </div><!-- banner //-->
 
@@ -94,7 +87,7 @@
 
     </div><!-- wrapper //-->
 
-    <a href="#header" class="goTop scroll"></a>
+    <a href="#header" class="goTop scroll ti-angle-up"></a>
 
     <footer id="footer">
         <ul class="foot-contact">
@@ -117,8 +110,8 @@
             loop: true,
             speed: 1000,
             effect: 'fade',
-            pagination: '.swiper-pagination',
-            paginationClickable: true
+            // pagination: '.swiper-pagination',
+            // paginationClickable: true
         });
     </script>
     @RenderSection("Scripts", required: false)

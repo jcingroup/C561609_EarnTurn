@@ -1,31 +1,36 @@
 @charset "UTF-8";
 
+// 當前選單
+$current:          page('&:nth-child');
 
-$current: page('&:nth-child');
+// 自定樣式(屬性及值)
+$menu-styles:      ()!default;
+$menu-link-styles: ()!default;
+
 
 // 主選單
 #menu {
-    height: $menu-height;
     z-index: z(menu);
 
-    @if $menu-bg { background: $menu-bg; }
-    float: left;
-    margin-top: 56px;
-    width: 100%;
+    @if $menu-height { height: $menu-height }
+
+    @each $attribute, $value in $menu-styles {
+        #{$attribute}: #{$value};
+    }
 
     a {
-        display: inline-block;
-        margin-right: -4px;
-        height: 100%;
-        // width: percentage(1/length($menu-item));
-        // width: 9.9%;
-        width: 138px;
-
         color: $menu-link;
         font-size: em($menu-font-size);
-        letter-spacing: 1px;
 
-        @include text-middle($menu-height);
+        @if $menu-link-height-full {
+            height: 100%;
+            @include text-middle($menu-height);
+        }
+
+        @each $attribute, $value in $menu-link-styles {
+            #{$attribute}: #{$value};
+        }
+
         @include mq(wider) {
             width: ($max-width - nth($logo-size,1))/length($menu-item);
         }
@@ -49,7 +54,7 @@ $current: page('&:nth-child');
 
 
 // == 行動版主選單
-@if $menu-mobile-has {
+@if $enable-RWD {
     .menu-trigger {
         @extend %text-hide;
 
