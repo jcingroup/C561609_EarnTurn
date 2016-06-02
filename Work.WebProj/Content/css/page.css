@@ -504,13 +504,13 @@ html, body {
     line-height: 64px;
     display: inline-block;
     margin-right: -4px;
-    width: 138px;
+    width: 12.5%;
     letter-spacing: 1px; }
     @media (min-width: 87.5em) {
       #menu a {
         width: 164px; } }
     #menu a:nth-child(4) {
-      margin-left: 208px; }
+      margin-left: 216px; }
     #menu a:hover, #menu a:active {
       background: #A07910;
       color: #fff;

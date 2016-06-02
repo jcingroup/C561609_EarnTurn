@@ -36,7 +36,8 @@ $menu-link-styles: ()!default;
         }
 
         &:nth-child(4) {
-            margin-left: nth($logo-size,1) - 8;
+            // margin-left: nth($logo-size,1) - 8;
+            margin-left: nth($logo-size,1);
         }
         &:hover, &:active {
             background: $warning;
