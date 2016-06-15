@@ -1,47 +1,37 @@
 @charset "UTF-8";
 
 // 下為基本樣式(屬性固定)
-$btn-display:            inline-block !default;
-$btn-pd:                 12px 20px !default;
-$btn-border-radius:      5px !default;
-$btn-effect:             'background .35s, color .5s' !default;
-
 $btn-state-color:        #fff !default;
-$btn-disabled:           $gray-light !default;
-$btn-font-size:          18px !default;
-$btn-font-family:        $font-family-sp !default;
-$btn-line-height:        1.01 !default;
-$btn-letter-spacing:     1px !default;
+$btn-disabled-bg:        $gray-light !default;
+$btn-effect:             'background .35s, color .5s' !default;
 
 // 下為可自定屬性及樣式
 $btn-styles: (
-    color:               #fff,
-    background:          $brand-primary
+    color:               $btn-state-color,
+    background:          $brand-primary,
+    display:             inline-block,
+    border-radius:       5px,
+    font-size:           18px,
+    letter-spacing:      1px,
+    line-height:         1.01,
+    padding:             12px 20px
 ) !default;
 
 $btn-hover-styles: (
-    background:          lighten($brand-primary, 6%)
+    background:          lighten($brand-primary, 6%),
+    color:               #fff
 ) !default;
 
 
 // button
 // ----------------------------------------------
 
-.btn {
-    // 下為基本樣式(屬性固定)
-    @if $btn-display         { display: $btn-display; }
-    @if $btn-pd              { padding: $btn-pd; }
-    @if $btn-border-radius   { border-radius: $btn-border-radius; }
-    @if $btn-font-size       { font-size: em($btn-font-size); }
-    @if $btn-font-family     { font-family: $btn-font-family; }
-    @if $btn-line-height     { line-height: $btn-line-height; }
-    @if $btn-letter-spacing  { letter-spacing: $btn-letter-spacing; }
-    @if $btn-effect          { @include transition($btn-effect); }
-
+[class*="btn"] {
     // 下為自定屬性與樣式
     @each $attribute, $value in $btn-styles {
         #{$attribute}: #{$value};
     }
+    @if $btn-effect { @include transition($btn-effect); }
 
     &, &:active, &.active {
         &:focus {
@@ -51,15 +41,16 @@ $btn-hover-styles: (
     &:active, &.active {
         outline: 0;
     }
-    &.disabled, &[disabled], fieldset[disabled] & {
-        cursor: $cursor-disabled;
-        opacity: .65;
-    }
-    &:hover, &:active, &.active {
-    // &:hover, &:focus, &.focus {
+    &:hover, &:active, &.active,
+    &:focus, &.focus {
         @each $attribute, $value in $btn-hover-styles {
             #{$attribute}: #{$value};
         }
+    }
+    &.disabled, &[disabled], fieldset[disabled] & {
+        cursor: $cursor-disabled;
+        opacity: .65;
+        @if $btn-disabled-bg { background-color: $btn-disabled-bg; }
     }
 }
 

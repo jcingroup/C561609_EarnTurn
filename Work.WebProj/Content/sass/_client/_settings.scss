@@ -67,7 +67,6 @@ $z-index: (
 );
 
 
-
 // == module
 // ----------------------------------------------------------------------
 // ## module/nav
@@ -91,29 +90,14 @@ $menu-link-styles: (
     letter-spacing:            1px
 );
 
-// 行動選單(menu-trigger)
-$menu-mobile-bk:               'wide';     // 從()螢幕寬度以下開始出現行動版選單
-$menu-mobile-style:            'overlay';  // 行動版選單樣式-push(推拉)/overlay(全螢幕)
-$menu-mobile-bg:               #eeefef;
-$menu-mobile-width:            100%;
-$menu-trigger-animate:         true;
-$menu-trigger-thickness:       3px;
-$menu-trigger-width:           42px;
-$menu-trigger-height:          $menu-trigger-thickness * 10;
-$menu-trigger-pd:              0;
-$menu-trigger-color:           $brand-primary;
-
-// ## module/slider
-// $swiper-pagination:            true;
-// $swiper-banner:                false;
-
-
-// ## base/table
-$tb-border:                    1px solid #E3D5C1;
-$tb-pd:                        5px 10px;
-$th-color:                     darken($info, 15);
-$td-color:                     darken($warning, 5);
-
 // ## module/animate - search,lan-nav
 $fadeIn:                       true;
 $slide-down:                   true;
+
+
+// == for page
+// ----------------------------------------------------------------------
+$table-border:                 1px solid #E3D5C1;
+$table-pd:                     5px 10px;
+$th-styled:                    (color: darken($info, 15));
+$td-styled:                    (color: darken($warning, 5));

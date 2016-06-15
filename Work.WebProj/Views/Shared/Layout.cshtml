@@ -45,7 +45,8 @@
             </nav>
 
             <nav class="top-nav">
-                <a href="~/ContactUs">人力招募</a>
+                <a href="~/ContactUs/JoinUs">人才招募</a>
+                <a href="~/ContactUs">聯絡我們</a>
     			<a href="~/index">回首頁</a>
             </nav>
 
@@ -90,12 +91,18 @@
     <a href="#header" class="goTop scroll ti-angle-up"></a>
 
     <footer id="footer">
-        <ul class="foot-contact">
+        <ul class="foot-about">
             <li>英騰物業股份有限公司</li>
             <li>英騰開發建設有限公司</li>
             <li>英騰保全股份有限公司</li>
             <li>英騰公寓大廈管理維護有限公司</li>
         </ul>
+        <div class="foot-contact">
+            <span>台北市大同區民生西路231號9樓</span>
+            <span>TEL 02-2557-8155</span>
+            <span>FAX 02-2557-3010</span>
+            <a class="mail" href="mailto:pke2000kimo@yahoo.com.tw">Mail</a>
+        </div>
         <div class="copyright">Earn Turn &copy; 2016</div>
     </footer><!-- footer -->
 
@@ -103,6 +110,11 @@
     <script src="~/Content/js/common.js"></script>
     <script src="~/Content/js/swiper.min.js"></script>
     <script>
+        // var msg = $(window).height() - $('#footer').height();
+        // var msg = $(document).height() - $('#footer').height();
+        // var msg = $(window).scrollTop() + $(window).height() - $('#footer').height();
+        // var msg2 = $('#footer').offset().top;
+        // alert(msg + "/" + msg2);
         // 輪播banner
         var swiper = new Swiper('#banner', {
             autoplay: 4500,

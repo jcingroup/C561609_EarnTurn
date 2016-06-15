@@ -1,11 +1,18 @@
 @charset "UTF-8";
 
 // 當前選單
-$current:          page('&:nth-child');
+$current:             page('&:nth-child');
 
 // 自定樣式(屬性及值)
-$menu-styles:      ()!default;
-$menu-link-styles: ()!default;
+$menu-styles:         ()!default;
+$menu-link-styles:    ()!default;
+
+
+// 行動選單(mobile-trigger)
+$menu-mobile-bk:      'wide' !default;     // 從()螢幕寬度以下開始出現行動版選單
+$menu-mobile-style:   'overlay' !default;  // 行動版選單樣式-push(推拉)/overlay(全螢幕)
+$menu-mobile-bg:      #eeefef !default;
+$menu-mobile-width:   100% !default;
 
 
 // 主選單
@@ -49,92 +56,6 @@ $menu-link-styles: ()!default;
             box-shadow: inset 2px 2px 10px rgba(#000,.5);
 
             &:hover, &:active { background: none; }
-        }
-    }
-}
-
-
-// == 行動版主選單
-@if $enable-RWD {
-    .menu-trigger {
-        @extend %text-hide;
-
-        display: none;
-        cursor: pointer;
-        overflow: hidden;
-
-        position: relative;
-        left: $gutter;
-        top: 50%;
-        @include transform(translateY(-50%));
-
-        @include mq-max(break(#{$menu-mobile-bk},-1)) { display: block; }
-        @include mq-max(phone) { left: 0; }
-
-        // 變形 X 效果
-        @if $menu-trigger-animate {
-            z-index: z(overlay) + 1;
-
-            width: $menu-trigger-width;
-            height: $menu-trigger-height;
-
-            @include transition(background 0.3s);
-            @include prefix(apperance, none, webkit moz);
-
-            // 本次專案
-            @include mq-max(mobile) {
-                @include transform(scale(.6));
-                top: 30%;
-                left: -5px;
-            }
-
-            &:active, &.active {
-                // background-color: darken($brand-primary, 10%);
-                span {
-                    background: none;
-                    &::before {
-                        top: 0;
-                        @include transform(rotate(45deg));
-                    }
-                    &::after {
-                        bottom: 0;
-                        @include transform(rotate(-45deg));
-                    }
-                    &::before, &::after {
-                        // background: #fff;
-                        @include prefix(transition-delay, '0, .3s');
-                    }
-                }
-            }
-
-            span {
-                @include absolute(left $menu-trigger-pd right $menu-trigger-pd top (($menu-trigger-height / 2) - ($menu-trigger-thickness / 2)));
-                display: block;
-
-                background: $menu-trigger-color;
-                height: $menu-trigger-thickness;
-                margin: auto;
-                @include transition(background 0s 0.3s);
-
-                @include el(all) {
-                    width: 100%;
-                    height: $menu-trigger-thickness;
-                    background-color: $menu-trigger-color;
-                    @include absolute(left 0);
-                    @include prefix(transition-duration, '.3s, .3s');
-                    @include prefix(transition-delay, '.3s, 0');
-                }
-                &::before {
-                    top: -(($menu-trigger-height / 2) - ($menu-trigger-thickness / 2) - $menu-trigger-pd);
-                    @include prefix(transition-property, 'top, transform');
-                }
-                &::after {
-                    bottom: -(($menu-trigger-height / 2) - ($menu-trigger-thickness / 2) - $menu-trigger-pd);
-                    @include prefix(transition-property, 'bottom, transform');
-                }
-            }
-        } @else {
-            // 專案樣式
         }
     }
 }

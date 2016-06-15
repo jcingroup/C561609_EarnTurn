@@ -9,12 +9,12 @@ $font-size-h2:       55px;
 $font-size-h3:       32px;
 $font-size-h4:       25px;
 
-// 本次專案專用變數
-@import "_client/settings";
-
 
 // import
 // ------------------------------------------------------------
+// 本次專案專用變數
+@import "_client/settings";
+
 // 共用
 @import "helper/function";
 @import "helper/var";
@@ -29,8 +29,8 @@ $font-size-h4:       25px;
 
 // 本頁專用
 @import "_client/module/breadcrumb";
-@import "_client/module/label";
 @import "_client/module/tab";
+@import "_client/module/btn";
 
 
 // main
@@ -38,7 +38,15 @@ $font-size-h4:       25px;
 #main {
     img { max-width: 100%; }
 
-    section { padding: $gutter*2 0; }
+    section {
+        padding: $gutter*2 0;
+
+        .ContactUs & {
+            padding: 0;
+            margin-top: $gutter*2;
+            position: relative;
+        }
+    }
 
     .Service & {
         @extend %center;
@@ -107,7 +115,7 @@ p {
         text-align: right;
 
         &:nth-of-type(n+2) {
-            border-left: $tb-border;
+            border-left: $table-border;
         }
     }
     td {
@@ -145,6 +153,21 @@ p {
             color: lighten($brand-secondary,60);
         }
     }
+    a {
+        color: #E3DED5;
+
+        &:hover, &:active { border-bottom: 1px solid #E3DED5; }
+    }
+    .label {
+        display: inline-block;
+        min-width: 70px;
+        text-align: center;
+        background: darken($success,7);
+        border-bottom: 1px solid lighten($success,15);
+        border-right: 1px solid lighten($success,15);
+        color: #fff;
+        margin-right: 10px;
+    }
 }
 #map-canvas {
     height: 380px;
@@ -165,18 +188,23 @@ p {
 
 
 // == 人力招募
-.ContactUs {
+.JoinUs {
     text-align: center;
 
     .col-1-3 {
         font-size: em(29);
         line-height: 185px;
+        padding: 0;
         margin: $spacer;
         border: $hr-border;
         background-position: 96% 90%;
         background-repeat: no-repeat;
 
-        &:first-of-type { background-image: url(#{$img-path}/ContactUs/icon.gif); }
-        &:last-of-type { background-image: url(#{$img-path}/ContactUs/icon2.gif); }
+        &:first-of-type {
+            background-image: url(#{$img-path}/ContactUs/icon.gif);
+        }
+        &:last-of-type {
+            background-image: url(#{$img-path}/ContactUs/icon2.gif);
+        }
     }
 }

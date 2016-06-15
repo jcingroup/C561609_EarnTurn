@@ -4,9 +4,10 @@
 @import "module/nav";
 
 // 共用module
-@import "module/classes";
-@import "module/list";
 @import "module/goTop";
+@import "module/list";
+@import "module/label";
+@import "module/classes";
 
 
 // 本次專案樣式
@@ -17,9 +18,9 @@
     z-index: z(menu)+1;
     @include absolute(left 50% top 12%);
     // margin-left: 26%;
-    margin-left: 365px;
+    margin-left: 335px;
 
-    @include mq(wider) { margin-left: 430px; }
+    @include mq(wider) { margin-left: 350px; }
 
     a {
         font-size: em(15px);

@@ -2,42 +2,26 @@
 
 // var 有值 or true 才會顯示，false or null 則不顯示
 // -----------------------------------------------------------------
-$table-margin-bottom:    $spacer !default;
 
-// 共用
-$table-collapse:         collapse !default; // collapse
-$table-bg:               false !default;
-$table-color:            false !default;
-$table-font-size:        false !default;
-$table-line-height:      false !default;
-$table-bordered:         false !default;
+// table, 共用樣式
 $table-border-color:     $brand-gray;
+$table-border:           1px solid $table-border-color !default;
+$table-bordered:         false !default;
+$table-pd:               15px !default;
+$table-align:            center !default;
+$table-valign:           middle !default;
 
-// th+td
-$tb-pd:                  15px !default;
-$tb-border:              1px solid $table-border-color !default;
+$table-styled: (
+    margin-bottom:       $spacer,
+    border-collapse:     collapse
+) !default;
 
-// th
-$th-bg:                  false !default;
-$th-font-size:           false !default;
-$th-font-weight:         false !default;
-$th-color:               false !default;
+// th, td, caption 樣式
+$caption-styled:         () !default;
+$th-styled:              () !default;
+$td-styled:              () !default;
+$td-item-styled:         () !default;
 
-// td
-$td-bg:                  false !default;
-$td-color:               false !default;
-$td-font-size:           false !default;
-$td-item-bg:             false !default;
-$td-item-color:          false !default;
-$td-item-font-size:      false !default;
-
-$table-caption-has:      false !default;
-$caption-font-size:      false !default;
-$caption-pd-top:         false !default;
-$caption-pd-bottom:      false !default;
-$caption-color:          false !default;
-$caption-line-height:    false !default;
-$caption-align:          false !default;
 
 // 滑鼠移過變色
 $table-bg-hover:         false !default;
@@ -80,16 +64,13 @@ $table-rwd:              false !default;
 /*      table
 -----------------------------------------------------------------------*/
 table {
-    margin-bottom: $table-margin-bottom;
+    @each $attribute, $value in $table-styled {
+        #{$attribute}: #{$value};
+    }
 
-    // 下列變數有值才會顯示，false or null 則不顯示
-    @if $table-collapse    { border-collapse: $table-collapse; }
-    @if $table-color       { color: $table-color; }
-    @if $table-font-size   { font-size: em($table-font-size); }
-    @if $table-line-height { line-height: $table-line-height; }
-    @if $table-bg          { background: $table-bg; }
-    @if $tb-border {
-        border-bottom: $tb-border;
+    // 上下框線
+    @if $table-border {
+        border-bottom: $table-border;
 
         > tbody + tbody {
           border-top: 2px solid $table-border-color;
@@ -104,14 +85,21 @@ table {
     }
 }
 
+caption {
+    @each $attribute, $value in $caption-styled {
+        #{$attribute}: #{$value};
+    }
+}
+
 th, td {
-    text-align: center;
-    vertical-align: middle;
+    @if $table-align  { text-align: $table-align; }
+    @if $table-valign { vertical-align: $table-valign; }
 
-    @if $tb-pd     { padding: $tb-pd; }
-    @if $tb-border {
+    @if $table-pd     { padding: $table-pd; }
 
-        border-top: $tb-border;
+    // 上下框線
+    @if $table-border {
+        border-top: $table-border;
 
         caption + thead &,
         colgroup + thead &,
@@ -120,23 +108,23 @@ th, td {
 }
 
 th {
-    @if $th-bg          { background: $th-bg; }
-    @if $th-color       { color: $th-color; }
-    @if $th-font-weight { font-weight: $th-font-weight; }
-    @if $th-font-size   { font-size: em($th-font-size); }
+    @each $attribute, $value in $th-styled {
+        #{$attribute}: #{$value};
+    }
 }
 td {
-    @if $td-bg        { background: $td-bg; }
-    @if $td-color     { color: $td-color; }
-    @if $td-font-size { font-size: em($td-font-size); }
+    @each $attribute, $value in $td-styled {
+        #{$attribute}: #{$value};
+    }
 
     &.item {
-        @if $td-item-bg        { background: $td-item-bg; }
-        @if $td-item-color     { color: $td-item-color; }
-        @if $td-item-font-size { font-size: em($td-item-font-size); }
+        @each $attribute, $value in $td-item-styled {
+            #{$attribute}: #{$value};
+        }
     }
 }
 
+// 四邊框線
 @if $table-bordered {
     .table-bordered {
         border: $table-bordered;
@@ -157,18 +145,6 @@ td {
         td { background-color: $table-bg-hover; }
     }
 }
-@if $table-caption-has {
-    caption {
-        @if $caption-pd-top      { padding-top: $caption-pd-top; }
-        @if $caption-pd-bottom   { padding-bottom: $caption-pd-bottom; }
-        @if $caption-color       { color: $caption-color; }
-        @if $caption-font-size   { font-size: em($caption-font-size); }
-        @if $caption-line-height { line-height: $caption-line-height; }
-        @if $caption-align       { text-align: $caption-align; }
-    }
-}
-
-
 
 // 斑馬紋條列式表格
 @if $table-bg-accent {
@@ -180,9 +156,7 @@ td {
 // 響應式表格
 //
 // '.table-rwd' < 768 時會出現水平卷軸
-
 @if $table-rwd {
-
     .table-rwd {
         overflow-x: auto;
         min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
@@ -204,4 +178,3 @@ td {
         }
     }
 }
-

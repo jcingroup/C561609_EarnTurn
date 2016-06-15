@@ -109,13 +109,15 @@ html, body {
     }
 }
 .copyright {
-    background: $footer-color url(#{$img-path}/icon-footer.gif) no-repeat center 12px;
+    background: $footer-color url(#{$img-path}/icon-footer.gif) center 2px no-repeat;
     color: #E0E2DE;
     font-size: em(13);
-    padding: 12px 0 13px;
+    letter-spacing: 1px;
+    padding-bottom: 13px;
+    // padding: 12px 0 13px;
 }
 
-.foot-contact {
+.foot-about {
     margin-bottom: $gutter*3;
 
     li {
@@ -130,3 +132,36 @@ html, body {
     }
 }
 
+.foot-contact {
+    background: $footer-color;
+    padding: $gutter+10 0;
+    color: #F1F1E4;
+    line-height: 1;
+    position: relative;
+
+    span {
+        padding: 0 em(15);
+        border-right: 1px solid #B9B9AF;
+
+        &:last-of-type { border-right: none; }
+    }
+    .mail {
+        display: block;
+
+        background: url(#{$img-path}/icon-mail.gif) 0 0 no-repeat;
+        font-size: em(13);
+        color: #5B2F5D;
+        line-height: 52px;
+
+        width: 59px;
+        margin-left: 300px;
+        padding-left: 8px;
+
+        @include absolute(top 7px left 50%);
+
+        &:hover, &:active {
+            background-image: url(#{$img-path}/icon-mail2.gif?v2);
+            color: #fff;
+        }
+    }
+}

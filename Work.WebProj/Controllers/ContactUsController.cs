@@ -14,5 +14,9 @@ namespace DotWeb.WebApp.Controllers
         {
             return View("ContactUs");
         }
+        public ActionResult JoinUs()
+        {
+            return View();
+        }
     }
 }

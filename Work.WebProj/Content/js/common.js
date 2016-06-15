@@ -1,9 +1,19 @@
+
+
 // 回頂端
 $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
-        $('.goTop').fadeIn();
+        $('.goTop').fadeIn(750);
     } else {
         $('.goTop').fadeOut();
+    }
+    // 頁腳特效
+    var elem = $('#footer');
+    var window_scroll_top = $(window).scrollTop() + $(window).height() - elem.height();
+    if (window_scroll_top > elem.offset().top) {
+        $('.goTop').addClass('bottom');
+    } else {
+        $('.goTop').removeClass('bottom')
     }
 });
 $('.scroll').click(function (event) {
@@ -14,51 +24,51 @@ $('.scroll').click(function (event) {
 });
 
 // 下拉選單
-var $dropbtn = $("[data-dropdown='btn']");
-var dropcontent = "[data-dropdown='content']";
-$dropbtn.click(function(){
-    // event.preventDefault();
-    $(this).next(dropcontent).slideToggle("300");
-});
-$dropbtn.blur(function(){
-    $(this).next(dropcontent).slideUp("300");
-});
+// var $dropbtn = $("[data-dropdown='btn']");
+// var dropcontent = "[data-dropdown='content']";
+// $dropbtn.click(function(){
+//     // event.preventDefault();
+//     $(this).next(dropcontent).slideToggle("300");
+// });
+// $dropbtn.blur(function(){
+//     $(this).next(dropcontent).slideUp("300");
+// });
 
 // 縮放特效
-var $collapse = $("[data-toggle='collapse']");
-var fall = '.collapse-content';
+// var $collapse = $("[data-toggle='collapse']");
+// var fall = '.collapse-content';
 
-$collapse.click(function () {
-    $(this).next(fall).slideToggle();
-    $(this).parent().siblings().children().next().slideUp(150);
-    // $(this).siblings().next(fall).slideUp();
-    $(this).toggleClass("current"),
-            $collapse.not(this).removeClass("current");
-    return false;
-});
+// $collapse.click(function () {
+//     $(this).next(fall).slideToggle();
+//     $(this).parent().siblings().children().next().slideUp(150);
+//     // $(this).siblings().next(fall).slideUp();
+//     $(this).toggleClass("current"),
+//             $collapse.not(this).removeClass("current");
+//     return false;
+// });
 
 // 行動裝置的主選單
-$menuLeft = $('#menu');
-$trigger = $('.menu-trigger');
+// $menuLeft = $('#menu');
+// $trigger = $('.menu-trigger');
 
-$trigger.click(function() {
-    $(this).toggleClass('active');
-    $('body').toggleClass('overlay');
-    $(fall).slideUp();
-    $collapse.removeClass("current");
-});
+// $trigger.click(function() {
+//     $(this).toggleClass('active');
+//     $('body').toggleClass('overlay');
+//     $(fall).slideUp();
+//     $collapse.removeClass("current");
+// });
 // $('.toggle').click(function() {
 //     $('body').removeClass('overlay');
 // });
 
 // 行動裝置的產品分類選單
-$(".pro-menu").click(function() {
-    $(this).toggleClass("active");
-    // $('aside nav').slideToggle(750);
-    $('.sidebar').slideToggle(170);
-    $(fall).slideUp();
-    $collapse.removeClass("current");
-});
+// $(".pro-menu").click(function() {
+//     $(this).toggleClass("active");
+//     // $('aside nav').slideToggle(750);
+//     $('.sidebar').slideToggle(170);
+//     $(fall).slideUp();
+//     $collapse.removeClass("current");
+// });
 
 // 搜尋框縮放
 // var submitIcon = $("[data-expand='icon']");

@@ -270,6 +270,8 @@
     <Content Include="Content\images\Future\banner.jpg" />
     <Content Include="Content\images\Future\pic.png" />
     <Content Include="Content\images\icon-crown.png" />
+    <Content Include="Content\images\icon-mail.gif" />
+    <Content Include="Content\images\icon-mail2.gif" />
     <Content Include="Content\images\Index\about.png" />
     <Content Include="Content\images\Index\banner_border.png" />
     <Content Include="Content\images\Index\circle_bg.png" />
@@ -542,8 +544,8 @@
     <Content Include="Content\sass\helper\mixins\_state.scss" />
     <Content Include="Content\sass\helper\mixins\_text.scss" />
     <Content Include="Content\sass\helper\_var.scss" />
-    <Content Include="Views\ContactUs\ContactUs.cshtml" />
     <Content Include="Content\sass\_client\module\_nav.scss" />
+    <Content Include="Views\ContactUs\ContactUs.cshtml" />
     <Content Include="Views\Future\Future.cshtml" />
     <Content Include="Views\Service\Service.cshtml" />
     <Content Include="Views\Service\sidebar.cshtml" />
@@ -552,6 +554,7 @@
     <Content Include="Views\Info\Info.cshtml" />
     <Content Include="Views\Activity\Activity.cshtml" />
     <Content Include="Views\Results\sidebar.cshtml" />
+    <Content Include="Views\ContactUs\JoinUs.cshtml" />
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
