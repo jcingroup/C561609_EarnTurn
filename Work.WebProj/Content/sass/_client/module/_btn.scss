@@ -4,17 +4,17 @@
 $btn-state-color:        #fff !default;
 $btn-disabled-bg:        $gray-light !default;
 $btn-effect:             'background .35s, color .5s' !default;
+$btn-display:            inline-block !default;
+$btn-pd:                 12px 20px !default;
+$btn-border-radius:      5px !default;
+$btn-font-size:          18px !default;
+$btn-line-height:        1.01 !default;
 
 // 下為可自定屬性及樣式
 $btn-styles: (
     color:               $btn-state-color,
     background:          $brand-primary,
-    display:             inline-block,
-    border-radius:       5px,
-    font-size:           18px,
     letter-spacing:      1px,
-    line-height:         1.01,
-    padding:             12px 20px
 ) !default;
 
 $btn-hover-styles: (
@@ -27,7 +27,14 @@ $btn-hover-styles: (
 // ----------------------------------------------
 
 [class*="btn"] {
-    // 下為自定屬性與樣式
+    // 下為預設樣式
+    @if $btn-display       { display: $btn-display }
+    @if $btn-pd            { padding: $btn-pd }
+    @if $btn-border-radius { border-radius: $btn-border-radius }
+    @if $btn-font-size     { font-size: $btn-font-size }
+    @if $btn-line-height   { line-height: $btn-line-height }
+
+    // 下為追加樣式-自定屬性與樣式
     @each $attribute, $value in $btn-styles {
         #{$attribute}: #{$value};
     }

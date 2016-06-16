@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-// 實用函數
-@import "helper/function";
-
-
 // 本頁專用變數(覆蓋)
 // ------------------------------------------------------------
 $index:              true;
@@ -27,13 +23,13 @@ $btn-styles: (
     margin-top:      40px,
     color:           #000,
     text-align:      center,
-    font-weight:     500
+    font-weight:     500,
+    letter-spacing:  2
 );
 $btn-hover-styles: (
     background:      url(#{$img-path2}/btn2.gif) no-repeat center center,
     box-shadow:      none
 );
-
 
 // import
 // ------------------------------------------------------------
@@ -41,6 +37,7 @@ $btn-hover-styles: (
 @import "_client/settings";
 
 // 共用
+@import "helper/function";
 @import "helper/var";
 @import "helper/mixins";
 

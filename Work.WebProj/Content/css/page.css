@@ -792,14 +792,14 @@ img.float-l {
   color: #241F50; }
 
 [class*="btn"] {
-  color: #fff;
-  background: #5B2F5D;
   display: inline-block;
+  padding: 12px 20px;
   border-radius: 5px;
   font-size: 18px;
-  letter-spacing: 1px;
   line-height: 1.01;
-  padding: 12px 20px;
+  color: #fff;
+  background: #5B2F5D;
+  letter-spacing: 1px;
   -webkit-transition: background .35s, color .5s;
   transition: background .35s, color .5s; }
   [class*="btn"]:focus, [class*="btn"]:active:focus, [class*="btn"].active:focus {

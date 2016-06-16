@@ -655,6 +655,10 @@ img.float-l {
   overflow: hidden; }
 
 [class*="btn"] {
+  display: inline-block;
+  border-radius: 8px;
+  font-size: 23px;
+  line-height: 56px;
   background: url(../images/index/btn.gif) no-repeat center center;
   box-shadow: -5px 4px 0 rgba(0, 0, 0, 0.3);
   min-width: 148px;
@@ -662,6 +666,7 @@ img.float-l {
   color: #000;
   text-align: center;
   font-weight: 500;
+  letter-spacing: 2;
   -webkit-transition: background .35s, color .5s;
   transition: background .35s, color .5s; }
   [class*="btn"]:focus, [class*="btn"]:active:focus, [class*="btn"].active:focus {
