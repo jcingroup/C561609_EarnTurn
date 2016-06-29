@@ -239,6 +239,7 @@
     <Compile Include="Areas\Base\Controllers\MenuController.cs" />
     <Compile Include="Areas\Base\Controllers\UsersController.cs" />
     <Compile Include="Areas\Base\BaseAreaRegistration.cs" />
+    <Content Include="Content\css\vendor\lightbox.css" />
     <Content Include="Content\css\vendor\swiper.min.css" />
     <Content Include="Content\css\vendor\themify-icons.css" />
     <Content Include="Content\font\Champagne&amp;Limousines.eot" />
@@ -246,11 +247,18 @@
     <Content Include="Content\images\AboutUs\banner.jpg" />
     <Content Include="Content\images\AboutUs\certificate.jpg" />
     <Content Include="Content\images\AboutUs\certificate2.jpg" />
+    <Content Include="Content\images\AboutUs\certificate2_l.jpg" />
     <Content Include="Content\images\AboutUs\certificate3.jpg" />
+    <Content Include="Content\images\AboutUs\certificate3_l.jpg" />
     <Content Include="Content\images\AboutUs\certificate4.jpg" />
+    <Content Include="Content\images\AboutUs\certificate4_l.jpg" />
     <Content Include="Content\images\AboutUs\certificate5.jpg" />
+    <Content Include="Content\images\AboutUs\certificate5_l.jpg" />
     <Content Include="Content\images\AboutUs\certificate6.jpg" />
+    <Content Include="Content\images\AboutUs\certificate6_l.jpg" />
     <Content Include="Content\images\AboutUs\certificate7.jpg" />
+    <Content Include="Content\images\AboutUs\certificate7_l.jpg" />
+    <Content Include="Content\images\AboutUs\certificate_l.jpg" />
     <Content Include="Content\images\AboutUs\organization.gif" />
     <Content Include="Content\images\AboutUs\organization2.gif" />
     <Content Include="Content\images\AboutUs\organizition3.gif" />
@@ -262,6 +270,7 @@
     <Content Include="Content\images\Activity\pic4.jpg" />
     <Content Include="Content\images\Activity\pic5.jpg" />
     <Content Include="Content\images\breadcrumb_bg.gif" />
+    <Content Include="Content\images\close.png" />
     <Content Include="Content\images\ContactUs\banner.jpg" />
     <Content Include="Content\images\ContactUs\icon.gif" />
     <Content Include="Content\images\ContactUs\icon2.gif" />
@@ -283,6 +292,8 @@
     <Content Include="Content\images\Info\pic3.jpg" />
     <Content Include="Content\images\Info\pic4.jpg" />
     <Content Include="Content\images\Info\pic5.jpg" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\next.png" />
     <Content Include="Content\images\noIE\bg.gif" />
     <Content Include="Content\images\noIE\brow.gif" />
     <Content Include="Content\images\noIE\brow2.gif" />
@@ -293,6 +304,7 @@
     <Content Include="Content\images\noIE\line.gif" />
     <Content Include="Content\images\noIE\noIE.css" />
     <Content Include="Content\images\noIE\noIE.html" />
+    <Content Include="Content\images\prev.png" />
     <Content Include="Content\images\Results\banner.jpg" />
     <Content Include="Content\images\Results\p1\pic.jpg" />
     <Content Include="Content\images\Results\p1\pic2.jpg" />
@@ -363,6 +375,7 @@
     <Content Include="Content\images\sign.png" />
     <Content Include="Content\images\title_bg.png" />
     <Content Include="Content\js\jquery-scrolltofixed.js" />
+    <Content Include="Content\js\lightbox.js" />
     <Content Include="Content\js\tab.js" />
     <Content Include="Content\sass\helper\mixins\_rem.scss" />
     <None Include="Controllers\Api\EditController.cs" />

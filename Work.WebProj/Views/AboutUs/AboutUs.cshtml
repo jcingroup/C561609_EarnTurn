@@ -4,6 +4,20 @@
     ViewBag.Target = "關於英騰";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
+@section Scripts {
+    <script src="~/Content/js/lightbox.js"></script>
+    <script>
+        lightbox.option({
+          'fadeDuration': 300,
+          'resizeDuration': 450,
+          'fitImagesInViewport': false
+        })
+    </script>
+}
+
+@section css {
+    <link rel="stylesheet" href="~/Content/css/vendor/lightbox.css">
+}
 
 <section id="p1" class="wrap">
     <article class="col-6 text-left">
@@ -69,13 +83,34 @@
             <li><em class="circle">2016</em> 榮譽加入桃園市公寓大廈管理維護商業同業公會。</li>
         </ul>
         <ul class="list-pic clear">
-            <li><img src="~/Content/images/AboutUs/certificate.jpg" alt="英騰ISO中文"><span>ISO中文</span></li>
-            <li><img src="~/Content/images/AboutUs/certificate2.jpg" alt="英騰ISO通過"><span>ISO通過</span></li>
-            <li><img src="~/Content/images/AboutUs/certificate3.jpg" alt="英騰內政部核發登記"><span>內政部核發登記</span></li>
-            <li><img src="~/Content/images/AboutUs/certificate4.jpg" alt="英騰公寓大廈ISO通過證書"><span>公寓大廈ISO通過證書</span></li>
-            <li><img src="~/Content/images/AboutUs/certificate5.jpg" alt="英騰公寓大廈管理維護登記證"><span>公寓大廈管理維護登記證</span></li>
-            <li><img src="~/Content/images/AboutUs/certificate6.jpg" alt="英騰台北市政府核發登記"><span>台北市政府核發登記</span></li>
-            <li><img src="~/Content/images/AboutUs/certificate7.jpg" alt="英騰保全ISO通過"><span>保全ISO通過</span></li>
+            <li>
+                <a href="~/Content/images/AboutUs/certificate_l.jpg" data-lightbox="certificate" data-title="英騰ISO中文"><img src="~/Content/images/AboutUs/certificate.jpg" alt="英騰ISO中文"></a>
+                <span>ISO中文</span>
+            </li>
+            <li>
+                <a href="~/Content/images/AboutUs/certificate2_l.jpg" data-lightbox="certificate" data-title="英騰ISO通過"><img src="~/Content/images/AboutUs/certificate2.jpg" alt="英騰ISO通過">
+                </a><span>ISO通過</span>
+            </li>
+            <li>
+                <a href="~/Content/images/AboutUs/certificate3_l.jpg" data-lightbox="certificate" data-title="英騰內政部核發登記"><img src="~/Content/images/AboutUs/certificate3.jpg" alt="英騰內政部核發登記"></a>
+                <span>內政部核發登記</span>
+            </li>
+            <li>
+                <a href="~/Content/images/AboutUs/certificate4_l.jpg" data-lightbox="certificate" data-title="英騰公寓大廈ISO通過證書"><img src="~/Content/images/AboutUs/certificate4.jpg" alt="英騰公寓大廈ISO通過證書"></a>
+                <span>公寓大廈ISO通過證書</span>
+            </li>
+            <li>
+                <a href="~/Content/images/AboutUs/certificate4_l.jpg" data-lightbox="certificate" data-title="英騰公寓大廈管理維護登記證"><img src="~/Content/images/AboutUs/certificate5.jpg" alt="英騰公寓大廈管理維護登記證"></a>
+                <span>公寓大廈管理維護登記證</span>
+            </li>
+            <li>
+                <a href="~/Content/images/AboutUs/certificate6_l.jpg" data-lightbox="certificate" data-title="英騰台北市政府核發登記"><img src="~/Content/images/AboutUs/certificate6.jpg" alt="英騰台北市政府核發登記"></a>
+                <span>台北市政府核發登記</span>
+            </li>
+            <li>
+                <a href="~/Content/images/AboutUs/certificate7_l.jpg" data-lightbox="certificate" data-title="英騰保全ISO通過"><img src="~/Content/images/AboutUs/certificate7.jpg" alt="英騰保全ISO通過"></a>
+                <span>保全ISO通過</span>
+            </li>
         </ul>
     </div>
 </section>
