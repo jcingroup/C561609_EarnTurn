@@ -609,10 +609,10 @@ img.float-l {
   position: absolute;
   top: 12%;
   left: 50%;
-  margin-left: 335px; }
+  margin-left: 245px; }
   @media (min-width: 87.5em) {
     .top-nav {
-      margin-left: 350px; } }
+      margin-left: 260px; } }
   .top-nav a {
     font-size: 0.9375em;
     color: #fff;

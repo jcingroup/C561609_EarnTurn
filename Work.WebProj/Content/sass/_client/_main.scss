@@ -18,9 +18,9 @@
     z-index: z(menu)+1;
     @include absolute(left 50% top 12%);
     // margin-left: 26%;
-    margin-left: 335px;
+    margin-left: 245px;
 
-    @include mq(wider) { margin-left: 350px; }
+    @include mq(wider) { margin-left: 260px; }
 
     a {
         font-size: em(15px);
